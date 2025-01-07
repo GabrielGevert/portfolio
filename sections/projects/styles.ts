@@ -1,0 +1,29 @@
+import styled from "styled-components";
+
+export const ProjectsContainer = styled.div`
+  width: 100%;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const ProjectsTitle = styled.span`
+  font-size: 2rem;
+  color: var(--tints_primary);
+`;
+
+export const ProjectsText = styled.p`
+  font-size: 1.2rem;
+  color: var(--neutrals_light);
+  width: 90%;
+  margin-top: 0;
+`;
+
+export const ProjectsCardsWrap = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 90%;
+`;
+
