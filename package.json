@@ -28,7 +28,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "babel-plugin-styled-components": "^2.1.4",
     "typescript": "^5"
   }
 }
