@@ -18,6 +18,7 @@ import {
 
 import { Eye, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
+import { useScroll } from "@/utils/ScrollContext";
 
 const translations = {
   en: {
@@ -36,6 +37,7 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
   const basePath = "";
+  const { refs, scrollToSection } = useScroll();
 
   return (
     <Container ref={ref} className="top color">
@@ -63,8 +65,8 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
                 <Linkedin width={52} height={52} />
               </OpeningFirstContentItem>
             </OpeningFirstContentItemsWrap>
-            <OpeningFirstContentButtonWrap>
-              <OpeningFirstContentButton>
+            <OpeningFirstContentButtonWrap onClick={() => scrollToSection(refs.projectsRef)}>
+              <OpeningFirstContentButton> 
                 {translations[currentLanguage].project}
               </OpeningFirstContentButton>
               <Eye />
