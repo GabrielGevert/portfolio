@@ -10,7 +10,7 @@ import {
   SliderButton,
   Text,
 } from "./styles";
-import { Languages } from "lucide-react";
+import Image from "next/image";
 
 const translations = {
   en: {
@@ -30,6 +30,8 @@ const translations = {
 const Header = () => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  
 
   return (
     <HeaderContainer>
@@ -43,9 +45,14 @@ const Header = () => {
       {/* <Languages /> */}
       <HeaderTranslate onClick={toggleLanguage}>
         <SliderButton $isEnglish={isEnglish}>
-          <img
-            src={isEnglish ? "/usa_flag.png" : "/brazil_flag.png"}
+        <Image
+            src={`${basePath}/${
+              isEnglish ? "usa_flag.png" : "brazil_flag.png"
+            }`}
             alt={isEnglish ? "USA Flag" : "Bandeira do Brasil"}
+            width={32}
+            height={32}
+            unoptimized
           />
         </SliderButton>
         <Text $isEnglish={isEnglish} />

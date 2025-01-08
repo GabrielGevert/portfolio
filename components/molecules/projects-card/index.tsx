@@ -39,11 +39,14 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
   repo,
   bgColor,
 }) => {
+
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <ProjectsCardContainer $bgColor={bgColor}>
-      <Image alt={`${title} image`} src={img} width={320} height={175} />
+      <Image alt={`${title} image`} src={`${basePath}${img}`} width={320} height={175} />
       <ProjectsCardTitle>{title}</ProjectsCardTitle>
       <ProjectsCardDescription>{description}</ProjectsCardDescription>
       <ProjectsCardWrapButtons className={repo ? "" : "noRepo"}>

@@ -35,6 +35,7 @@ const translations = {
 const Opening = () => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <Container className="top color">
@@ -71,10 +72,10 @@ const Opening = () => {
           </OpeningFirstContentItems>
         </OpeningFirstContent>
         <OpeningSecondContent>
-            <Image src="/me.png"
+            <Image src={`${basePath}/me.png`}
             width={270}
             height={337.5}
-            alt="ELO RISE LOGO" />
+            alt="Me" />
         </OpeningSecondContent>
       </OpeningContainer>
     </Container>

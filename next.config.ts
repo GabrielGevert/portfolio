@@ -1,13 +1,15 @@
-import type { NextConfig } from "next";
+const isProduction = process.env.NODE_ENV === "production";
 
-const nextConfig: NextConfig = {
-  output: 'export',
-  compiler: {
-    styledComponents: true,
-  },
+const nextConfig = {
+  output: "export",
+  basePath: isProduction ? "/portfolio" : "",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
+  compiler: {
+    styledComponents: true,
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
