@@ -1,7 +1,7 @@
 "use client";
 
+import React, { forwardRef } from "react";
 import { Container, ProjectsCard } from "@/components";
-import React from "react";
 import {
   ProjectsCardsWrap,
   ProjectsContainer,
@@ -10,7 +10,7 @@ import {
 } from "./styles";
 import { useLanguage } from "@/utils/LanguageContext";
 
-const Projects = () => {
+const Projects = forwardRef<HTMLDivElement>(( props, ref ) => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
@@ -49,14 +49,14 @@ const Projects = () => {
       description: isEnglish
         ? "This Portfolio, highlighted here for the purpose of having the source open for viewing."
         : "Este Portfolio, destacado aqui com a finalidade de ter o código aberto para visualização.",
-      site: "https://www.github.com/",
-      repo: "https://www.github.com/",
+      site: "https://gabrielgevert.github.io/portfolio/",
+      repo: "https://github.com/GabrielGevert/portfolio",
       bgColor: "var(--tints_primary)",
     },
   ];
 
   return (
-    <Container>
+    <Container ref={ref}>
       <ProjectsContainer>
         <ProjectsTitle>{translations[currentLanguage].title}</ProjectsTitle>
         <ProjectsText>{translations[currentLanguage].text}</ProjectsText>
@@ -76,6 +76,6 @@ const Projects = () => {
       </ProjectsContainer>
     </Container>
   );
-};
+});
 
 export default Projects;

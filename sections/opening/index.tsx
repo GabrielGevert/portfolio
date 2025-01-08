@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
 import { Container } from "@/components";
 import {
@@ -18,6 +18,7 @@ import {
 
 import { Eye, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
+import { useScroll } from "@/utils/ScrollContext";
 
 const translations = {
   en: {
@@ -32,13 +33,14 @@ const translations = {
   },
 };
 
-const Opening = () => {
-  const { isEnglish, toggleLanguage } = useLanguage();
+const Opening = forwardRef<HTMLDivElement>((props, ref) => {
+  const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = "";
+  const { refs, scrollToSection } = useScroll();
 
   return (
-    <Container className="top color">
+    <Container ref={ref} className="top color">
       <OpeningContainer>
         <OpeningFirstContent>
           <OpeningFirstContentPresentation>
@@ -63,8 +65,8 @@ const Opening = () => {
                 <Linkedin width={52} height={52} />
               </OpeningFirstContentItem>
             </OpeningFirstContentItemsWrap>
-            <OpeningFirstContentButtonWrap>
-              <OpeningFirstContentButton>
+            <OpeningFirstContentButtonWrap onClick={() => scrollToSection(refs.projectsRef)}>
+              <OpeningFirstContentButton> 
                 {translations[currentLanguage].project}
               </OpeningFirstContentButton>
               <Eye />
@@ -80,6 +82,6 @@ const Opening = () => {
       </OpeningContainer>
     </Container>
   );
-};
+});
 
 export default Opening;

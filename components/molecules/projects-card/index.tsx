@@ -8,6 +8,7 @@ import {
   ProjectsCardDescription,
   ProjectsCardTitle,
   ProjectsCardWrapButtons,
+  ProjectsHref,
 } from "./styles";
 import Image from "next/image";
 import { useLanguage } from "@/utils/LanguageContext";
@@ -39,14 +40,25 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
   repo,
   bgColor,
 }) => {
-
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = "";
 
   return (
-    <ProjectsCardContainer $bgColor={bgColor}>
-      <Image alt={`${title} image`} src={`${basePath}${img}`} width={320} height={175} />
+    <ProjectsCardContainer>
+      <ProjectsHref
+        $bgColor={bgColor}
+        href={site}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          alt={`${title} image`}
+          src={`${basePath}${img}`}
+          width={320}
+          height={175}
+        />
+      </ProjectsHref>
       <ProjectsCardTitle>{title}</ProjectsCardTitle>
       <ProjectsCardDescription>{description}</ProjectsCardDescription>
       <ProjectsCardWrapButtons className={repo ? "" : "noRepo"}>

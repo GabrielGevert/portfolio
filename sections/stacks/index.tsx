@@ -1,6 +1,6 @@
 "use client";
 import { Container, StacksCard } from "@/components";
-import React from "react";
+import React, { forwardRef } from "react";
 import { LanguageProvider, useLanguage } from "@/utils/LanguageContext";
 import { StacksCardsWrap, StacksContainer, StacksTitle } from "./styles";
 import { SiNextdotjs, SiTypescript } from "react-icons/si";
@@ -16,7 +16,7 @@ const translation = {
   },
 };
 
-const Stacks = () => {
+const Stacks = forwardRef<HTMLDivElement>(( props, ref ) => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
@@ -56,8 +56,8 @@ const Stacks = () => {
     },
   ];
   return (
-    <Container className="color">
-      <StacksContainer>
+    <Container ref={ref} className="color">
+      <StacksContainer >
         <StacksTitle>{translation[currentLanguage].title}</StacksTitle>
         <StacksCardsWrap>
           {StacksCardMock.map((card, index) => (
@@ -74,6 +74,6 @@ const Stacks = () => {
       </StacksContainer>
     </Container>
   );
-};
+});
 
 export default Stacks;

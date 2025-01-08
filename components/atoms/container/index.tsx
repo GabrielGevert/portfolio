@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React, { ReactNode, forwardRef } from "react";
 import { SectionWrapper } from "./styles";
 
 interface ContainerProps {
@@ -8,8 +8,12 @@ interface ContainerProps {
   className?: string;
 }
 
-const Container: React.FC<ContainerProps> = ({ children, className }) => (
-  <SectionWrapper className={className}>{children}</SectionWrapper>
+const Container = forwardRef<HTMLDivElement, ContainerProps>(
+  ({ children, className }, ref) => (
+    <SectionWrapper ref={ref} className={className}>
+      {children}
+    </SectionWrapper>
+  )
 );
 
 export default Container;
