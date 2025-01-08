@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useLanguage } from "@/utils/LanguageContext";
+import { useScroll } from "@/utils/ScrollContext";
 import {
   HeaderContainer,
   HeaderFirstContent,
@@ -29,23 +30,33 @@ const translations = {
 
 const Header = () => {
   const { isEnglish, toggleLanguage } = useLanguage();
+  const { refs, scrollToSection } = useScroll();
   const currentLanguage = isEnglish ? "en" : "pt";
   const basePath = "";
-  
 
   return (
     <HeaderContainer>
       <HeaderFirstContent>Portfolio - Gabriel Gevert</HeaderFirstContent>
       <HeaderSecondContent>
-        <HeaderItems>{translations[currentLanguage].home}</HeaderItems>
-        <HeaderItems>{translations[currentLanguage].aboutMe}</HeaderItems>
-        <HeaderItems>{translations[currentLanguage].projects}</HeaderItems>
-        <HeaderItems>{translations[currentLanguage].contact}</HeaderItems>
+        <HeaderItems onClick={() => scrollToSection(refs.openingRef)}>
+          {translations[currentLanguage].home}
+        </HeaderItems>
+        <HeaderItems onClick={() => scrollToSection(refs.aboutMeRef)}>
+          {translations[currentLanguage].aboutMe}
+        </HeaderItems>
+        <HeaderItems onClick={() => scrollToSection(refs.stacksRef)}>
+          Stacks
+        </HeaderItems>
+        <HeaderItems onClick={() => scrollToSection(refs.projectsRef)}>
+          {translations[currentLanguage].projects}
+        </HeaderItems>
+        <HeaderItems onClick={() => scrollToSection(refs.contactRef)}>
+          {translations[currentLanguage].contact}
+        </HeaderItems>
       </HeaderSecondContent>
-      {/* <Languages /> */}
       <HeaderTranslate onClick={toggleLanguage}>
         <SliderButton $isEnglish={isEnglish}>
-        <Image
+          <Image
             src={`${basePath}/${
               isEnglish ? "usa_flag.png" : "brazil_flag.png"
             }`}

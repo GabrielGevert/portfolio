@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { forwardRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
 import { Container } from "@/components";
 import {
@@ -32,13 +32,13 @@ const translations = {
   },
 };
 
-const Opening = () => {
-  const { isEnglish, toggleLanguage } = useLanguage();
+const Opening = forwardRef<HTMLDivElement>((props, ref) => {
+  const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
   const basePath = "";
 
   return (
-    <Container className="top color">
+    <Container ref={ref} className="top color">
       <OpeningContainer>
         <OpeningFirstContent>
           <OpeningFirstContentPresentation>
@@ -80,6 +80,6 @@ const Opening = () => {
       </OpeningContainer>
     </Container>
   );
-};
+});
 
 export default Opening;

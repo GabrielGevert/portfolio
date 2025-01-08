@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { Container, MailModal } from "@/components";
 import {
@@ -41,7 +41,7 @@ const translations = {
   },
 };
 
-const Contact = () => {
+const Contact = forwardRef<HTMLDivElement>(( props, ref ) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
@@ -73,7 +73,7 @@ const Contact = () => {
   };
 
   return (
-    <Container className="color">
+    <Container ref={ref} className="color">
       <ContactContainer>
         <FirstContent>
           <FirstContentTitle>
@@ -123,6 +123,6 @@ const Contact = () => {
       )}
     </Container>
   );
-};
+});
 
 export default Contact;

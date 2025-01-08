@@ -3,6 +3,7 @@ import { Header } from "@components";
 import "@/styles/global.css";
 import { LanguageProvider } from "@/utils/LanguageContext";
 import StyledComponentsRegistry from "@/utils/registry";
+import { ScrollProvider } from "@/utils/ScrollContext";
 
 export const metadata: Metadata = {
   title: "Gabriel Gevert - Portfolio",
@@ -19,8 +20,10 @@ export default function RootLayout({
       <body>
         <StyledComponentsRegistry>
           <LanguageProvider>
-            <Header />
-            <main>{children}</main>
+            <ScrollProvider>
+              <Header />
+              <main>{children}</main>
+            </ScrollProvider>
           </LanguageProvider>
         </StyledComponentsRegistry>
       </body>

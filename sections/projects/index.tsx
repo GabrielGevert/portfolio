@@ -1,7 +1,7 @@
 "use client";
 
+import React, { forwardRef } from "react";
 import { Container, ProjectsCard } from "@/components";
-import React from "react";
 import {
   ProjectsCardsWrap,
   ProjectsContainer,
@@ -10,7 +10,7 @@ import {
 } from "./styles";
 import { useLanguage } from "@/utils/LanguageContext";
 
-const Projects = () => {
+const Projects = forwardRef<HTMLDivElement>(( props, ref ) => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
@@ -56,7 +56,7 @@ const Projects = () => {
   ];
 
   return (
-    <Container>
+    <Container ref={ref}>
       <ProjectsContainer>
         <ProjectsTitle>{translations[currentLanguage].title}</ProjectsTitle>
         <ProjectsText>{translations[currentLanguage].text}</ProjectsText>
@@ -76,6 +76,6 @@ const Projects = () => {
       </ProjectsContainer>
     </Container>
   );
-};
+});
 
 export default Projects;

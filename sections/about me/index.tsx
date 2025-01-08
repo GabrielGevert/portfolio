@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { forwardRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
 import { Container, Card } from "@/components";
 import {
@@ -29,7 +29,7 @@ const translations = {
   },
 };
 
-const AboutMe = () => {
+const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
@@ -53,7 +53,7 @@ const AboutMe = () => {
   ];
 
   return (
-    <Container className="top">
+    <Container ref={ref} className="top">
       <AboutMeContainer>
         <AboutMeTitle>{translations[currentLanguage].title}</AboutMeTitle>
         <AboutMeText>{translations[currentLanguage].text}</AboutMeText>
@@ -71,6 +71,6 @@ const AboutMe = () => {
       </AboutMeContainer>
     </Container>
   );
-};
+});
 
 export default AboutMe;
