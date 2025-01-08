@@ -30,7 +30,7 @@ const translations = {
 const Header = () => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = "";
   
 
   return (

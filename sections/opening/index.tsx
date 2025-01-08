@@ -35,7 +35,7 @@ const translations = {
 const Opening = () => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const basePath = "";
 
   return (
     <Container className="top color">
