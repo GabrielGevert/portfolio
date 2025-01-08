@@ -103,7 +103,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
             <SecondContentWrapInputs>
               <SecondContentInput
                 name="from_name"
-                placeholder="Nome: "
+                placeholder={isEnglish ? "Name: " : "Nome: "}
                 required
               />
               <SecondContentInput
@@ -113,7 +113,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
               />
               <SecondContentTextArea
                 name="message"
-                placeholder="Mensagem: "
+                placeholder={isEnglish ? "Message: " : "Mensagem: "}
                 required
               />
               <SecondContentButton type="submit">
