@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 interface ProjectsCardContainerProps {
-  $bgColor?: string; // Prop para permitir alterar a cor de fundo
+  $bgColor?: string;
 }
 
-export const ProjectsCardContainer = styled.div<ProjectsCardContainerProps>`
+export const ProjectsCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   /* align-items: center;
@@ -13,7 +13,7 @@ export const ProjectsCardContainer = styled.div<ProjectsCardContainerProps>`
   border-radius: 8px;
   padding: 1rem;
   width: 20.6rem;
-  height: 25rem;
+  height: 26rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
   background-color: var(--tints_background_3);
@@ -24,20 +24,6 @@ export const ProjectsCardContainer = styled.div<ProjectsCardContainerProps>`
     scale: 1.05;
     filter: brightness(1.2);
     transition: all 0.3s ease-in-out;
-  }
-
-  > img {
-    object-fit: contain;
-    max-width: calc(
-      100% - 1rem
-    ); /* Reduz a largura para criar um espaço interno */
-    max-height: 100%;
-    background-color: ${(props) => props.$bgColor || "transparent"};
-    border: 1px solid var(--tints_primary);
-    border-radius: 8px;
-    align-self: center;
-    padding: 0 0.5rem; /* Adiciona um espaço interno */
-    filter: brightness(1.2);
   }
 `;
 
@@ -103,5 +89,20 @@ export const ProjectsCardButtonRepo = styled.a`
   &:hover {
     filter: brightness(1.2);
     transition: all 0.2s ease-in-out;
+  }
+`;
+
+export const ProjectsHref = styled.a<ProjectsCardContainerProps>`
+  margin: 0 auto;
+  > img {
+    object-fit: contain;
+    max-width: calc(100% - 1rem);
+    max-height: 100%;
+    background-color: ${(props) => props.$bgColor || "transparent"};
+    border: 1px solid var(--tints_primary);
+    border-radius: 8px;
+    align-self: center;
+    padding: 0 0.5rem;
+    filter: brightness(1.2);
   }
 `;

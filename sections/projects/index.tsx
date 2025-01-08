@@ -49,8 +49,8 @@ const Projects = forwardRef<HTMLDivElement>(( props, ref ) => {
       description: isEnglish
         ? "This Portfolio, highlighted here for the purpose of having the source open for viewing."
         : "Este Portfolio, destacado aqui com a finalidade de ter o código aberto para visualização.",
-      site: "https://www.github.com/",
-      repo: "https://www.github.com/",
+      site: "https://gabrielgevert.github.io/portfolio/",
+      repo: "https://github.com/GabrielGevert/portfolio",
       bgColor: "var(--tints_primary)",
     },
   ];
