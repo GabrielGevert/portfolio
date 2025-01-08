@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      {width && width >= 5000 ? (
+      {width && width >= 499 ? (
         <>
           <HeaderFirstContent>Portfolio - Gabriel Gevert</HeaderFirstContent>
           <HeaderSecondContent>

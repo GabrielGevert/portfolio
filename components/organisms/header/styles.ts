@@ -90,7 +90,7 @@ export const HeaderTranslate = styled.div`
   border-radius: 25px;
   cursor: pointer;
   overflow: hidden;
-  top: 1rem;
+  top: 1.2rem;
   right: 2rem;
 
   @media ${device.mobileL} {
@@ -106,7 +106,7 @@ export const HeaderTranslate = styled.div`
 export const SliderButton = styled.div<SliderButtonProps>`
   position: absolute;
   top: 5%;
-  left: ${(props) => (props.$isEnglish ? "50%" : "5%")};
+  left: ${(props) => (props.$isEnglish ? "58%" : "0%")};
   width: 40%;
   height: 90%;
   background-color: var(--neutrals_light_100);
@@ -116,13 +116,16 @@ export const SliderButton = styled.div<SliderButtonProps>`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
+  object-fit: cover;
   img {
-    width: 100%;
-    height: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   @media ${device.mobileL} {
+    left: ${(props) => (props.$isEnglish ? "55%" : "5%")};
     img {
       width: 25px;
       height: 25px;
@@ -133,12 +136,19 @@ export const SliderButton = styled.div<SliderButtonProps>`
 `;
 
 export const Text = styled.div<SliderButtonProps>`
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
   background-color: var(--tints_primary);
   border-radius: 50%;
   position: absolute;
   top: 12%;
-  left: ${(props) => (props.$isEnglish ? "5%" : "60%")};
+  left: ${(props) => (props.$isEnglish ? "5%" : "63%")};
   transition: left 0.3s ease-in-out;
+
+  @media ${device.mobileL} {
+    width: 25px;
+    height: 25px;
+    left: ${(props) => (props.$isEnglish ? "5%" : "55%")};
+    top: 12.2%;
+  }
 `;
