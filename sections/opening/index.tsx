@@ -36,7 +36,7 @@ const translations = {
 const Opening = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = "/portfolio";
+  const basePath = "";
   const { refs, scrollToSection } = useScroll();
 
   return (
