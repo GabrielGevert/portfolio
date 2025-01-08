@@ -17,6 +17,7 @@ export const ContactContainer = styled.div`
   padding: 2rem 0;
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
 `;
 
 export const FirstContent = styled.div`
@@ -27,7 +28,7 @@ export const FirstContent = styled.div`
 `;
 
 export const SecondContent = styled.div`
-  width: 50%;
+  width: 58%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
