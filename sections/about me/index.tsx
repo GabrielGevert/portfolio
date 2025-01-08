@@ -56,7 +56,6 @@ const AboutMe = () => {
     <Container className="top">
       <AboutMeContainer>
         <AboutMeTitle>{translations[currentLanguage].title}</AboutMeTitle>
-
         <AboutMeText>{translations[currentLanguage].text}</AboutMeText>
         <AboutMeWrapTexts>
           <AboutMeYears>3+</AboutMeYears>
