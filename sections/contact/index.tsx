@@ -9,6 +9,7 @@ import {
   FirstContentText,
   FirstContentTitle,
   FirstContentWrapItens,
+  Href,
   SecondContent,
   SecondContentButton,
   SecondContentInput,
@@ -41,7 +42,7 @@ const translations = {
   },
 };
 
-const Contact = forwardRef<HTMLDivElement>(( props, ref ) => {
+const Contact = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
@@ -83,9 +84,15 @@ const Contact = forwardRef<HTMLDivElement>(( props, ref ) => {
             {translations[currentLanguage].text}
           </FirstContentText>
           <FirstContentWrapItens>
-            <Linkedin width={36} height={36} />
-            <Github width={36} height={36} />
-            <Mail width={36} height={36} />
+            <Href target="_blank" href="https://www.linkedin.com/in/gabrielgevert/" rel="noopener noreferrer">
+              <Linkedin width={36} height={36} />
+            </Href>
+            <Href target="_blank" href="https://github.com/GabrielGevert" rel="noopener noreferrer">
+              <Github width={36} height={36} />
+            </Href>
+            <Href target="_blank" href="mailto:gevertlolz@gmail.com" rel="noopener noreferrer">
+              <Mail width={36} height={36} />
+            </Href>
           </FirstContentWrapItens>
         </FirstContent>
         <SecondContent>
@@ -109,7 +116,9 @@ const Contact = forwardRef<HTMLDivElement>(( props, ref ) => {
                 placeholder="Mensagem: "
                 required
               />
-              <SecondContentButton type="submit">{translations[currentLanguage].buttonText}</SecondContentButton>
+              <SecondContentButton type="submit">
+                {translations[currentLanguage].buttonText}
+              </SecondContentButton>
             </SecondContentWrapInputs>
           </form>
         </SecondContent>

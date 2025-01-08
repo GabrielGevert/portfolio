@@ -52,6 +52,23 @@ export const FirstContentWrapItens = styled.div`
   color: var(--tints_primary);
 `;
 
+export const Href = styled.a`
+  margin: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  > svg {
+    transition: all 0.2s ease-in-out;
+    color: var(--tints_primary);
+    &:hover {
+      cursor: pointer;
+      filter: brightness(1.2);
+      transform: scale(1.15);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+`;
+
 export const SecondContentTitle = styled.div`
   font-size: 1.6rem;
   color: var(--neutrals_light_100);
@@ -109,7 +126,7 @@ export const SecondContentButton = styled.button`
   text-align: center;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-align-self: center;
+  align-self: center;
   animation: ${bump} 1s ease-in-out infinite;
   border: none;
 
