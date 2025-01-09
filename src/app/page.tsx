@@ -17,7 +17,7 @@ export default function Home() {
       <AboutMe ref={refs.aboutMeRef} />
       <Stacks ref={refs.stacksRef} />
       <Projects ref={refs.projectsRef} />
-      {/* <Contact ref={refs.contactRef} /> */}
+      <Contact ref={refs.contactRef} />
     </>
   );
 }
