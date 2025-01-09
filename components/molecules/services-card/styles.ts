@@ -1,3 +1,4 @@
+import { device } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -19,6 +20,13 @@ export const CardContainer = styled.div`
     filter: brightness(1.2);
     transition: all 0.3s ease-in-out;
   }
+
+  @media ${device.mobileL} {
+    width: 7.5em;
+    height: 7.5rem;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Icon = styled.div`
@@ -29,10 +37,14 @@ export const Icon = styled.div`
     width: 42px;
     height: 42px;
   }
+
+  @media ${device.mobileL} {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const Title = styled.h3`
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: bold;
   color: var(--neutrals_light_100);
   text-align: center;

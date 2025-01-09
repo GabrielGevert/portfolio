@@ -146,6 +146,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Satoshi-Regular', sans-serif;
+    font-family: var(--fonts_primary);
     background-color: var(--tints_background);
   }

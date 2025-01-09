@@ -1,3 +1,4 @@
+import { device } from "@/utils/media-query";
 import styled from "styled-components";
 
 interface SliderButtonProps {
@@ -27,6 +28,16 @@ export const HeaderContainer = styled.header`
     width: 2.5rem;
     height: 2.5rem;
   } */
+
+  @media ${device.mobileL} {
+    width: calc(100% - 1.6rem);
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+  }
 `;
 
 export const HeaderFirstContent = styled.h1`
@@ -34,6 +45,14 @@ export const HeaderFirstContent = styled.h1`
   font-size: 1.4rem;
   justify-content: flex-start;
   align-items: center;
+
+  @media ${device.mobileL} {
+    width: auto;
+    font-size: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 2px;
+  }
 `;
 
 export const HeaderSecondContent = styled.div`
@@ -71,14 +90,23 @@ export const HeaderTranslate = styled.div`
   border-radius: 25px;
   cursor: pointer;
   overflow: hidden;
-  top: 0.5rem;
+  top: 1.2rem;
   right: 2rem;
+
+  @media ${device.mobileL} {
+    width: 70px;
+    height: 2rem;
+    position: relative;
+    top: 0;
+    right: 0;
+    justify-self: end;
+  }
 `;
 
 export const SliderButton = styled.div<SliderButtonProps>`
   position: absolute;
   top: 5%;
-  left: ${(props) => (props.$isEnglish ? "50%" : "5%")};
+  left: ${(props) => (props.$isEnglish ? "58%" : "0%")};
   width: 40%;
   height: 90%;
   background-color: var(--neutrals_light_100);
@@ -88,10 +116,22 @@ export const SliderButton = styled.div<SliderButtonProps>`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
+  object-fit: cover;
   img {
-    width: 100%;
-    height: auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  @media ${device.mobileL} {
+    left: ${(props) => (props.$isEnglish ? "55%" : "5%")};
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -102,8 +142,13 @@ export const Text = styled.div<SliderButtonProps>`
   border-radius: 50%;
   position: absolute;
   top: 12%;
-  left: ${(props) => (props.$isEnglish ? "5%" : "60%")};
+  left: ${(props) => (props.$isEnglish ? "5%" : "63%")};
   transition: left 0.3s ease-in-out;
+
+  @media ${device.mobileL} {
+    width: 25px;
+    height: 25px;
+    left: ${(props) => (props.$isEnglish ? "5%" : "55%")};
+    top: 12.2%;
+  }
 `;
-
-

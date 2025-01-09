@@ -42,7 +42,7 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
 }) => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = "/portfolio";
+  const basePath = "";
 
   return (
     <ProjectsCardContainer>

@@ -7,8 +7,6 @@ interface ProjectsCardContainerProps {
 export const ProjectsCardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: center; */
   border: 1px solid var(--tints_primary);
   border-radius: 8px;
   padding: 1rem;

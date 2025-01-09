@@ -1,3 +1,4 @@
+import { device } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const StacksContainer = styled.div`
@@ -6,6 +7,13 @@ export const StacksContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  @media ${device.mobileL} {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const StacksTitle = styled.span`
@@ -18,4 +26,10 @@ export const StacksCardsWrap = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   width: 90%;
+
+  @media ${device.mobileL} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 95%;
+  }
 `;

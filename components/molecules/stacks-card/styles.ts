@@ -1,3 +1,4 @@
+import { device } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -24,6 +25,13 @@ export const CardContainer = styled.div`
   &.dif {
     border: 2px solid var(--neutrals_light_100);
   }
+
+  @media ${device.mobileL} {
+    width: 7.5rem;
+    height: 11rem;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const Icon = styled.div`
@@ -45,6 +53,10 @@ export const Title = styled.h3`
   &.dif {
     color: var(--tints_primary);
   }
+
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -61,8 +73,15 @@ export const StarWrap = styled.div`
   right: 0.5rem;
   top: 0.5rem;
   color: #f5c002;
-  
+
   > svg {
     fill: #f5c002;
+  }
+
+  @media ${device.mobileL} {
+    width: 24px;
+    height: 24px;
+    top: 0.2rem;
+    right: 0.4rem;
   }
 `;

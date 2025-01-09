@@ -1,9 +1,17 @@
+import { device } from "@/utils/media-query";
 import styled from "styled-components";
 
 export const OpeningContainer = styled.div`
   display: flex;
   width: 100%;
   padding: 2rem 0;
+
+  @media ${device.mobileL} {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const OpeningFirstContent = styled.div`
@@ -12,11 +20,18 @@ export const OpeningFirstContent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  @media ${device.mobileL} {
+    width: 95%;
+    margin-bottom: 0.2rem;
+    align-items: center;
+  }
 `;
 
 export const OpeningFirstContentPresentation = styled.span`
   font-size: 2rem;
   color: var(--neutrals_light);
+  justify-self: center;
 `;
 
 export const OpeningFirstContentTitle = styled.h2`
@@ -24,6 +39,10 @@ export const OpeningFirstContentTitle = styled.h2`
   color: var(--neutrals_light_100);
   height: 40px;
   margin-top: 0;
+
+  @media ${device.mobileL} {
+    font-size: 3rem;
+  }
 `;
 
 export const OpeningFirstContentText = styled.p`
@@ -31,6 +50,11 @@ export const OpeningFirstContentText = styled.p`
   color: var(--neutrals_light);
   width: 82%;
   margin-top: 0;
+
+  @media ${device.mobileL} {
+    width: 100%;
+    font-size: 1rem;
+  }
 `;
 
 export const OpeningFirstContentItems = styled.div`
@@ -38,11 +62,19 @@ export const OpeningFirstContentItems = styled.div`
   display: flex;
   width: 80%;
   justify-content: space-between;
+
+  @media ${device.mobileL} {
+    width: 100%;
+  }
 `;
 
 export const OpeningFirstContentItemsWrap = styled.div`
   display: flex;
   gap: 0.5rem;
+
+  @media ${device.mobileL} {
+    gap: 0.3rem;
+  }
 `;
 
 export const OpeningFirstContentItem = styled.a`
@@ -106,34 +138,35 @@ export const OpeningSecondContent = styled.div`
   justify-content: center;
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    width: 370px; /* Largura da elipse */
-    height: 370px; /* Altura da elipse */
-    background: linear-gradient(
-      to bottom,
-      var(--tints_primary) 86.7%, /* Parte visível da elipse */
-      var(--tints_background_2) 86.7% /* Parte cortada */
-    );
-    border-radius: 50%; /* Faz a forma de uma elipse */
-    z-index: 0; /* Fica atrás da imagem */
-    top: 33%; 
-    left: 50.8%;
-    transform: translate(-50%, -30%); /* Centraliza e ajusta a posição */
+  @media ${device.mobileL} {
+    display: none;
   }
 
-  background: var(--tints_background_2); /* Fundo do componente */
+  &::before {
+    content: "";
+    position: absolute;
+    width: 370px;
+    height: 370px;
+    background: linear-gradient(
+      to bottom,
+      var(--tints_primary) 86.7%,
+      /* Parte visível da elipse */ var(--tints_background_2) 86.7%
+        /* Parte cortada */
+    );
+    border-radius: 50%;
+    z-index: 0;
+    top: 33%;
+    left: 50.8%;
+    transform: translate(-50%, -30%);
+  }
+
+  background: var(--tints_background_2);
 
   img {
     position: relative;
-    z-index: 1; /* Garante que a imagem fique na frente */
+    z-index: 1;
     bottom: 1.06rem;
     border-bottom-right-radius: 0.5rem;
     border-bottom-left-radius: 1.5rem;
   }
 `;
-
-
-
-
