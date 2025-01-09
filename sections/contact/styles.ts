@@ -119,7 +119,7 @@ export const SecondContentInput = styled.input`
   border-radius: 8px;
   justify-content: center;
   color: #939399;
-  font-family: "Satoshi";
+  font-family: var(--fonts_primary);
 
   @media ${device.mobileL} {
     align-self: center;
@@ -139,7 +139,7 @@ export const SecondContentTextArea = styled.textarea`
   border-radius: 8px;
   color: #939399;
   border: 1px solid var(--tints_primary);
-  font-family: "Satoshi";
+  font-family: var(--fonts_primary);
 
   ::placeholder {
     color: #939399;
