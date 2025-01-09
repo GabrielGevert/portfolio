@@ -16,6 +16,7 @@ import {
   Href,
 } from "./styles";
 import { useLanguage } from "@/utils/LanguageContext";
+import { useScroll } from "@/utils/ScrollContext";
 
 const translations = {
   en: {
@@ -48,6 +49,8 @@ const HeaderMenu = () => {
     setMenuVisible(false);
   };
 
+  const { refs, scrollToSection } = useScroll();
+
   return (
     <>
       <Menu width={30} height={30} onClick={handleMenuClick} />
@@ -63,17 +66,27 @@ const HeaderMenu = () => {
           <NavbarMenu>
             <NavBarMenuItemsWrap className="top">
               <NavbarMenuItens>
-                <NavbarMenuItem>
+                <NavbarMenuItem
+                  onClick={() => scrollToSection(refs.openingRef)}
+                >
                   {translations[currentLanguage].home}
                 </NavbarMenuItem>
-                <NavbarMenuItem>
+                <NavbarMenuItem
+                  onClick={() => scrollToSection(refs.aboutMeRef)}
+                >
                   {translations[currentLanguage].aboutMe}
                 </NavbarMenuItem>
-                <NavbarMenuItem>Stacks</NavbarMenuItem>
-                <NavbarMenuItem>
+                <NavbarMenuItem onClick={() => scrollToSection(refs.stacksRef)}>
+                  Stacks
+                </NavbarMenuItem>
+                <NavbarMenuItem
+                  onClick={() => scrollToSection(refs.projectsRef)}
+                >
                   {translations[currentLanguage].projects}
                 </NavbarMenuItem>
-                <NavbarMenuItem>
+                <NavbarMenuItem
+                  onClick={() => scrollToSection(refs.contactRef)}
+                >
                   {translations[currentLanguage].contact}
                 </NavbarMenuItem>
               </NavbarMenuItens>
