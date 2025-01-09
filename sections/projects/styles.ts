@@ -40,6 +40,7 @@ export const ProjectsCardsWrap = styled.div`
 
   @media ${device.mobileL} {
     grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
   }
 `;
 

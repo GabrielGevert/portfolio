@@ -1,3 +1,4 @@
+import { device } from "@/utils/media-query";
 import styled, { keyframes } from "styled-components";
 
 const bump = keyframes`
@@ -18,6 +19,12 @@ export const ContactContainer = styled.div`
   display: flex;
   gap: 1rem;
   justify-content: space-between;
+
+  @media ${device.mobileL} {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 export const FirstContent = styled.div`
@@ -25,6 +32,12 @@ export const FirstContent = styled.div`
   gap: 1rem;
   display: flex;
   flex-direction: column;
+
+  @media ${device.mobileL} {
+    width: 95%;
+    text-align: center;
+    align-items: center;
+  }
 `;
 
 export const SecondContent = styled.div`
@@ -33,6 +46,11 @@ export const SecondContent = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+
+  @media ${device.mobileL} {
+    width: 95%;
+    text-align: center;
+  }
 `;
 
 export const FirstContentTitle = styled.span`
@@ -51,6 +69,9 @@ export const FirstContentWrapItens = styled.div`
   display: flex;
   gap: 1rem;
   color: var(--tints_primary);
+  @media ${device.mobileL} {
+    justify-content: center;
+  }
 `;
 
 export const Href = styled.a`
@@ -73,6 +94,11 @@ export const Href = styled.a`
 export const SecondContentTitle = styled.div`
   font-size: 1.6rem;
   color: var(--neutrals_light_100);
+
+  @media ${device.mobileL} {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 export const SecondContentWrapInputs = styled.div`
@@ -94,6 +120,11 @@ export const SecondContentInput = styled.input`
   justify-content: center;
   color: #939399;
   font-family: "Satoshi";
+
+  @media ${device.mobileL} {
+    align-self: center;
+    width: 23rem;
+  }
 `;
 
 export const SecondContentTextArea = styled.textarea`
@@ -115,6 +146,11 @@ export const SecondContentTextArea = styled.textarea`
     opacity: 1;
     position: absolute;
     top: 0.5rem;
+  }
+
+  @media ${device.mobileL} {
+    align-self: center;
+    width: 23rem;
   }
 `;
 

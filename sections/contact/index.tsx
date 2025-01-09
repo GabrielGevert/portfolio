@@ -33,7 +33,7 @@ const translations = {
   pt: {
     title: "Entre em contato:",
     text: "Satisfeito? Por favor, entre em contato comigo!",
-    secondTitle: "Entre em contato, vamos fazer mágica juntos!",
+    secondTitle: "Me mande uma mensagem, vamos fazer mágica juntos!",
     buttonText: "Enviar",
     mailSucessText:
       "Email enviado com sucesso! Irei te retornar o mais breve possível!",
