@@ -38,7 +38,7 @@ const Header = () => {
   const { isEnglish, toggleLanguage } = useLanguage();
   const { refs, scrollToSection } = useScroll();
   const currentLanguage = isEnglish ? "en" : "pt";
-  const basePath = "";
+  const basePath = "/portfolio";
   const { width } = useWindowSize();
 
   return (
