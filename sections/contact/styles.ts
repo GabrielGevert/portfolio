@@ -123,7 +123,7 @@ export const SecondContentInput = styled.input`
 
   @media ${device.mobileL} {
     align-self: center;
-    width: 23rem;
+    width: 21rem;
   }
 `;
 
@@ -150,7 +150,7 @@ export const SecondContentTextArea = styled.textarea`
 
   @media ${device.mobileL} {
     align-self: center;
-    width: 23rem;
+    width: 21rem;
   }
 `;
 
