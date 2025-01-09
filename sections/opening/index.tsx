@@ -19,6 +19,7 @@ import {
 import { Eye, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { useScroll } from "@/utils/ScrollContext";
+import useWindowSize from "@/utils/window-size";
 
 const translations = {
   en: {
@@ -38,6 +39,7 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
   const currentLanguage = isEnglish ? "en" : "pt";
   const basePath = "";
   const { refs, scrollToSection } = useScroll();
+  const { width } = useWindowSize();
 
   return (
     <Container ref={ref} className="top color">
@@ -73,12 +75,14 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
             </OpeningFirstContentButtonWrap>
           </OpeningFirstContentItems>
         </OpeningFirstContent>
+        {width !== undefined && width >= 499 && (
         <OpeningSecondContent>
             <Image src={`${basePath}/me.png`}
             width={270}
             height={337.5}
             alt="Me" />
         </OpeningSecondContent>
+        )}
       </OpeningContainer>
     </Container>
   );
