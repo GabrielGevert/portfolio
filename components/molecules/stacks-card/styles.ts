@@ -6,41 +6,76 @@ export const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 2px solid var(--tints_primary);
-  border-radius: 8px;
+  background-color: var(--tints_background_3);
+  border: 1px solid var(--tints_border);
+  border-radius: 12px;
   padding: 20px;
-  width: 20rem;
-  height: 15rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 13rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease-in-out;
   position: relative;
 
   &:hover {
-    transform: translateY(-5px);
-    scale: 1.05;
-    filter: brightness(1.2);
-    transition: all 0.3s ease-in-out;
+    transform: translateY(-6px);
+    border-color: var(--tints_border_strong);
+    box-shadow: 0 8px 32px var(--tints_glow_soft);
   }
 
-  &.dif {
-    border: 2px solid var(--neutrals_light_100);
+  &.featured {
+    border: 1px solid var(--tints_border_strong);
+    background:
+      linear-gradient(var(--tints_background_3), var(--tints_background_3))
+        padding-box,
+      var(--gradient_primary) border-box;
+    box-shadow: 0 0 28px var(--tints_glow_soft);
+
+    &:hover {
+      box-shadow: 0 8px 40px var(--tints_glow);
+    }
   }
 
   @media ${device.mobileL} {
-    width: 7.5rem;
-    height: 11rem;
-    justify-content: center;
-    align-items: center;
+    min-height: 9.5rem;
+    padding: 16px 10px;
+  }
+`;
+
+export const Badge = styled.span`
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.2rem 0.9rem;
+  font-size: 0.8rem;
+  font-family: var(--fonts_primary_bold);
+  color: var(--neutrals_light);
+  background: var(--gradient_primary);
+  border-radius: 1rem;
+  white-space: nowrap;
+
+  @media ${device.mobileL} {
+    font-size: 0.7rem;
   }
 `;
 
 export const Icon = styled.div`
   margin-bottom: 15px;
   color: var(--neutrals_light_100);
+  transition: color 0.3s ease-in-out;
 
   > svg {
     width: 42px;
     height: 42px;
+  }
+
+  &.featured {
+    color: var(--tints_primary_light);
+  }
+
+  ${CardContainer}:hover & {
+    color: var(--tints_primary_light);
   }
 `;
 
@@ -49,20 +84,26 @@ export const Title = styled.h3`
   font-weight: bold;
   color: var(--neutrals_light_100);
   text-align: center;
+  margin: 0 0 0.5rem 0;
 
-  &.dif {
-    color: var(--tints_primary);
+  &.featured {
+    color: var(--tints_primary_light);
   }
 
   @media ${device.mobileL} {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 `;
 
 export const Description = styled.p`
   font-size: 1rem;
-  color: var(--neutrals_light_100);
+  color: var(--neutrals_gray);
   text-align: center;
+  margin: 0;
+
+  @media ${device.mobileL} {
+    font-size: 0.85rem;
+  }
 `;
 
 export const StarWrap = styled.div`
@@ -72,10 +113,10 @@ export const StarWrap = styled.div`
   height: 32px;
   right: 0.5rem;
   top: 0.5rem;
-  color: #f5c002;
+  color: var(--tints_star);
 
   > svg {
-    fill: #f5c002;
+    fill: var(--tints_star);
   }
 
   @media ${device.mobileL} {

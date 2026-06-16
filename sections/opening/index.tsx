@@ -5,6 +5,7 @@ import { Container } from "@/components";
 import {
   OpeningContainer,
   OpeningFirstContent,
+  OpeningFirstContentBadge,
   OpeningFirstContentButton,
   OpeningFirstContentButtonWrap,
   OpeningFirstContentItem,
@@ -13,23 +14,26 @@ import {
   OpeningFirstContentPresentation,
   OpeningFirstContentText,
   OpeningFirstContentTitle,
+  OpeningPhotoFrame,
   OpeningSecondContent,
 } from "./styles";
 
-import { Eye, Github, Linkedin } from "lucide-react";
+import { Cloud, Eye, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { useScroll } from "@/utils/ScrollContext";
 import useWindowSize from "@/utils/window-size";
 
 const translations = {
   en: {
+    badge: "Fullstack Developer",
     presentation: "Hello, I'm",
-    text: "Fullstack developer. I create web experiences in the best possible way for end users.",
+    text: "A Fullstack developer who builds complete solutions, from the front-end to the back-end. I'm comfortable across every layer of a product, and AWS is among my specialties.",
     project: "Projects",
   },
   pt: {
+    badge: "Desenvolvedor Fullstack",
     presentation: "Olá, eu sou",
-    text: " Desenvolvedor Fullstack. Eu crio experiências web da melhor maneira possível para usuários finais.",
+    text: "Desenvolvedor Fullstack que constrói soluções completas, do front-end ao back-end. Me viro bem em qualquer camada de um produto, e a AWS está entre minhas especialidades.",
     project: "Projetos",
   },
 };
@@ -45,6 +49,10 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
     <Container ref={ref} className="top color">
       <OpeningContainer>
         <OpeningFirstContent>
+          <OpeningFirstContentBadge>
+            <Cloud width={18} height={18} />
+            {translations[currentLanguage].badge}
+          </OpeningFirstContentBadge>
           <OpeningFirstContentPresentation>
             {translations[currentLanguage].presentation}
           </OpeningFirstContentPresentation>
@@ -67,21 +75,27 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
                 <Linkedin width={52} height={52} />
               </OpeningFirstContentItem>
             </OpeningFirstContentItemsWrap>
-            <OpeningFirstContentButtonWrap onClick={() => scrollToSection(refs.projectsRef)}>
-              <OpeningFirstContentButton> 
+            <OpeningFirstContentButtonWrap
+              onClick={() => scrollToSection(refs.projectsRef)}
+            >
+              <OpeningFirstContentButton>
                 {translations[currentLanguage].project}
               </OpeningFirstContentButton>
               <Eye />
             </OpeningFirstContentButtonWrap>
           </OpeningFirstContentItems>
         </OpeningFirstContent>
-        {width !== undefined && width >= 499 && (
-        <OpeningSecondContent>
-            <Image src={`${basePath}/me.png`}
-            width={270}
-            height={337.5}
-            alt="Me" />
-        </OpeningSecondContent>
+        {width !== undefined && width > 768 && (
+          <OpeningSecondContent>
+            <OpeningPhotoFrame>
+              <Image
+                src={`${basePath}/me.png`}
+                width={270}
+                height={337.5}
+                alt="Gabriel Gevert"
+              />
+            </OpeningPhotoFrame>
+          </OpeningSecondContent>
         )}
       </OpeningContainer>
     </Container>

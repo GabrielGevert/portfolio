@@ -3,13 +3,12 @@ import styled from "styled-components";
 
 export const StacksContainer = styled.div`
   width: 100%;
-  padding: 2rem 0;
+  padding: 2rem 0 3rem 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 
-  @media ${device.mobileL} {
-    flex-direction: column;
+  @media ${device.tablet} {
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -18,7 +17,21 @@ export const StacksContainer = styled.div`
 
 export const StacksTitle = styled.span`
   font-size: 2rem;
-  color: var(--tints_primary);
+  font-family: var(--fonts_primary_bold);
+  color: var(--neutrals_light);
+  width: fit-content;
+`;
+
+export const StacksText = styled.p`
+  font-size: 1.1rem;
+  color: var(--neutrals_gray);
+  margin: 0 0 1rem 0;
+  width: 90%;
+
+  @media ${device.mobileL} {
+    width: 95%;
+    font-size: 1rem;
+  }
 `;
 
 export const StacksCardsWrap = styled.div`
@@ -27,9 +40,13 @@ export const StacksCardsWrap = styled.div`
   gap: 20px;
   width: 90%;
 
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    width: 95%;
+    width: 100%;
+  }
+
+  @media ${device.mobileL} {
+    gap: 14px;
+    width: 100%;
   }
 `;

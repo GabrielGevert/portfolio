@@ -7,7 +7,8 @@ import { ScrollProvider } from "@/utils/ScrollContext";
 
 export const metadata: Metadata = {
   title: "Gabriel Gevert - Portfolio",
-  description: "Portfolio - Gabriel Gevert. Web Developer.",
+  description:
+    "Portfolio - Gabriel Gevert. Fullstack & Cloud Developer. AWS Amplify, Next.js, Flutter e Unity.",
 };
 
 export default function RootLayout({

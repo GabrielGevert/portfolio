@@ -12,25 +12,25 @@ import {
   AboutMeYears,
   AboutMeYearsExplanation,
 } from "./styles";
-import { Code2, Gem, GitPullRequestDraft, Rocket } from "lucide-react";
+import { CloudCog, Rocket, Server, Smartphone } from "lucide-react";
 
 const translations = {
   en: {
     title: "About me:",
-    text: "Hi, I'm Gabriel Gevert and I'm a Full Stack developer with around 3 years of effective experience, working in the web development field since 2021. I've increasingly improved my skills in web development and have a basic understanding of advanced UI/UX design principles. Here are the main skills I have:",
+    text: "Hi, I'm Gabriel Gevert, a Fullstack developer working with software development since 2020. I feel at home across every layer of an application, from the front-end to the back-end, including solutions on AWS. I also build mobile apps with Flutter and games with Unity when a project calls for it. I care about building things well and I like working close to a team. These are my main areas:",
     explanation:
-      "Years of experience. Specialised in building websites, while ensuring a seamless web experience for end users.",
+      "Years building software end to end, always learning and improving with each project alongside the team.",
   },
   pt: {
     title: "Sobre mim:",
-    text: "Olá, sou Gabriel Gevert e sou um desenvolvedor Full Stack com cerca de 3 anos de experiência efetiva, atuando na área de desenvolvimento web desde 2021. Aperfeiçoei cada vez mais minhas habilidades em desenvolvimento web e tenho uma compreensão básica dos princípios avançados de design UI/UX. Aqui estão as principais habilidades que possuo:",
+    text: "Olá, sou Gabriel Gevert, desenvolvedor Fullstack atuando com desenvolvimento de software desde 2020. Me sinto à vontade em todas as camadas de uma aplicação, do front-end ao back-end, incluindo soluções na AWS. Também desenvolvo apps mobile com Flutter e jogos com Unity quando o projeto pede. Gosto de fazer as coisas bem feitas e de trabalhar perto do time. Estas são minhas principais áreas:",
     explanation:
-      "Anos de experiência. Especializado na construção de sites, garantindo ao mesmo tempo uma integração perfeita na experiência web para usuários finais.",
+      "Anos construindo software de ponta a ponta, sempre aprendendo e melhorando a cada projeto junto com o time.",
   },
 };
 
 const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
-  const { isEnglish, toggleLanguage } = useLanguage();
+  const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
 
   const cardsMock = [
@@ -39,16 +39,16 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
       icon: <Rocket />,
     },
     {
-      title: isEnglish ? "Code Mastery" : "Domínio de Código",
-      icon: <Code2 />,
+      title: isEnglish ? "Back-end & APIs" : "Back-end & APIs",
+      icon: <Server />,
     },
     {
-      title: isEnglish ? "UI/UX Designing" : "Design de UI/UX",
-      icon: <Gem />,
+      title: isEnglish ? "Cloud" : "Cloud",
+      icon: <CloudCog />,
     },
     {
-      title: isEnglish ? "Code Versioning" : "Versionamento de Código",
-      icon: <GitPullRequestDraft />,
+      title: isEnglish ? "Mobile & Games" : "Mobile & Jogos",
+      icon: <Smartphone />,
     },
   ];
 
@@ -58,7 +58,7 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
         <AboutMeTitle>{translations[currentLanguage].title}</AboutMeTitle>
         <AboutMeText>{translations[currentLanguage].text}</AboutMeText>
         <AboutMeWrapTexts>
-          <AboutMeYears>3+</AboutMeYears>
+          <AboutMeYears>6+</AboutMeYears>
           <AboutMeYearsExplanation>
             {translations[currentLanguage].explanation}
           </AboutMeYearsExplanation>

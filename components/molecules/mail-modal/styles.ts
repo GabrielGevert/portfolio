@@ -19,36 +19,20 @@ const fadeOut = keyframes`
   }
 `;
 
-const shining = keyframes`
-  0% {
-    filter: brightness(1);
-  }
-  25% {
-    filter: brightness(1.05);
-  }
-  50% {
-    filter: brightness(1.15);
-  }
-  75% {
-    filter: brightness(1.05);
-  }
-  100% {
-    filter: brightness(1);
-  }
-`;
-
 export const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(8, 8, 14, 0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: flex-start;
   padding-top: 10%;
-  z-index: 1000;
+  z-index: 10000;
 
   @media ${device.mobileL} {
     padding-top: 30%;
@@ -66,15 +50,16 @@ export const ModalOverlay = styled.div`
 export const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
-  background: #fff;
-  padding: 0.5rem 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  background: var(--tints_background_2);
+  border: 1px solid var(--tints_border_strong);
+  border-top: 4px solid var(--tints_primary);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px var(--tints_glow_soft);
   max-width: 400px;
   width: 100%;
   text-align: center;
-  border-top: 1.5rem solid var(--tints_secondary);
-  border-bottom: 1.5rem solid var(--tints_secondary);
 
   @media ${device.mobileL} {
     width: 70%;
@@ -82,21 +67,26 @@ export const ModalContent = styled.div`
 `;
 
 export const ModalText = styled.p`
+  color: var(--neutrals_light_100);
+  line-height: 1.6;
+  margin: 0;
 `;
 
 export const CloseButton = styled.p`
-  padding: 0.5rem;
+  padding: 0.6rem;
   width: 60%;
   align-self: center;
-  background-color: var(--tints_primary);
-  color: white;
-  border-radius: 0.25rem;
-  animation: ${shining} 1s ease infinite;
-  transition: transform .3s ease-in-out;
+  background: var(--gradient_primary);
+  color: var(--neutrals_light);
+  font-family: var(--fonts_primary_bold);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
   height: fit-content;
+  margin: 0;
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.1);
+    filter: brightness(1.15);
+    box-shadow: 0 0 20px var(--tints_glow);
   }
 `;

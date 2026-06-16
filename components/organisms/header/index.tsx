@@ -3,13 +3,12 @@ import React from "react";
 import { useLanguage } from "@/utils/LanguageContext";
 import { useScroll } from "@/utils/ScrollContext";
 import {
+  FlagOption,
   HeaderContainer,
   HeaderFirstContent,
   HeaderItems,
   HeaderSecondContent,
   HeaderTranslate,
-  SliderButton,
-  Text,
 } from "./styles";
 import Image from "next/image";
 import useWindowSize from "@/utils/window-size";
@@ -41,9 +40,32 @@ const Header = () => {
   const basePath = "/portfolio";
   const { width } = useWindowSize();
 
+  const languageToggle = (
+    <HeaderTranslate onClick={toggleLanguage}>
+      <FlagOption $active={!isEnglish}>
+        <Image
+          src={`${basePath}/brazil_flag.png`}
+          alt="Português"
+          width={30}
+          height={30}
+          unoptimized
+        />
+      </FlagOption>
+      <FlagOption $active={isEnglish}>
+        <Image
+          src={`${basePath}/usa_flag.png`}
+          alt="English"
+          width={30}
+          height={30}
+          unoptimized
+        />
+      </FlagOption>
+    </HeaderTranslate>
+  );
+
   return (
     <HeaderContainer>
-      {width && width >= 499 ? (
+      {width !== undefined && width > 768 ? (
         <>
           <HeaderFirstContent>Portfolio - Gabriel Gevert</HeaderFirstContent>
           <HeaderSecondContent>
@@ -63,39 +85,13 @@ const Header = () => {
               {translations[currentLanguage].contact}
             </HeaderItems>
           </HeaderSecondContent>
-          <HeaderTranslate onClick={toggleLanguage}>
-            <SliderButton $isEnglish={isEnglish}>
-              <Image
-                src={`${basePath}/${
-                  isEnglish ? "usa_flag.png" : "brazil_flag.png"
-                }`}
-                alt={isEnglish ? "USA Flag" : "Bandeira do Brasil"}
-                width={32}
-                height={32}
-                unoptimized
-              />
-            </SliderButton>
-            <Text $isEnglish={isEnglish} />
-          </HeaderTranslate>
+          {languageToggle}
         </>
       ) : (
         <>
           <Menu />
           <HeaderFirstContent>Gabriel Gevert</HeaderFirstContent>
-          <HeaderTranslate onClick={toggleLanguage}>
-            <SliderButton $isEnglish={isEnglish}>
-              <Image
-                src={`${basePath}/${
-                  isEnglish ? "usa_flag.png" : "brazil_flag.png"
-                }`}
-                alt={isEnglish ? "USA Flag" : "Bandeira do Brasil"}
-                width={32}
-                height={32}
-                unoptimized
-              />
-            </SliderButton>
-            <Text $isEnglish={isEnglish} />
-          </HeaderTranslate>
+          {languageToggle}
         </>
       )}
     </HeaderContainer>

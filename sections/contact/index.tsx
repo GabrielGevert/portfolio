@@ -5,11 +5,12 @@ import emailjs from "emailjs-com";
 import { Container, MailModal } from "@/components";
 import {
   ContactContainer,
+  ContactLink,
+  ContactLinksWrap,
   FirstContent,
   FirstContentText,
   FirstContentTitle,
-  FirstContentWrapItens,
-  Href,
+  FormPanel,
   SecondContent,
   SecondContentButton,
   SecondContentInput,
@@ -18,27 +19,27 @@ import {
   SecondContentWrapInputs,
 } from "./styles";
 import { useLanguage } from "@/utils/LanguageContext";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 
 const translations = {
   en: {
     title: "Get in touch:",
-    text: "Satisfied with me? Please, get in touch!",
-    secondTitle: "Contact me, let’s make magic together!",
+    text: "I'm open to new opportunities and always happy to chat. Reach me on any channel below or send a message right here.",
+    secondTitle: "Send me a message, I'll get back to you soon!",
     buttonText: "Send",
     mailSucessText:
       "Email sent successfully! I will get back to you as soon as possible!",
-    mailErrorText: "Ocorreu um erro ao enviar o e-mail, tente novamente! Erro:",
+    mailErrorText:
+      "An error occurred while sending the email, please try again! Error:",
   },
   pt: {
     title: "Entre em contato:",
-    text: "Satisfeito? Por favor, entre em contato comigo!",
-    secondTitle: "Me mande uma mensagem, vamos fazer mágica juntos!",
+    text: "Estou aberto a novas oportunidades e sempre disposto a trocar uma ideia. Me chame em qualquer canal abaixo ou envie uma mensagem por aqui mesmo.",
+    secondTitle: "Me mande uma mensagem, retorno o quanto antes!",
     buttonText: "Enviar",
     mailSucessText:
       "Email enviado com sucesso! Irei te retornar o mais breve possível!",
-    mailErrorText:
-      "An error occurred while sending the email, please try again! Error:",
+    mailErrorText: "Ocorreu um erro ao enviar o e-mail, tente novamente! Erro:",
   },
 };
 
@@ -60,7 +61,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
         "lLXJKrSgDNV2tTDVL"
       )
       .then(
-        (result) => {
+        () => {
           setModalText(translations[currentLanguage].mailSucessText);
           setIsModalOpen(true);
         },
@@ -83,44 +84,63 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
           <FirstContentText>
             {translations[currentLanguage].text}
           </FirstContentText>
-          <FirstContentWrapItens>
-            <Href target="_blank" href="https://www.linkedin.com/in/gabrielgevert/" rel="noopener noreferrer">
-              <Linkedin width={36} height={36} />
-            </Href>
-            <Href target="_blank" href="https://github.com/GabrielGevert" rel="noopener noreferrer">
-              <Github width={36} height={36} />
-            </Href>
-            <Href target="_blank" href="mailto:gevertlolz@gmail.com" rel="noopener noreferrer">
-              <Mail width={36} height={36} />
-            </Href>
-          </FirstContentWrapItens>
+          <ContactLinksWrap>
+            <ContactLink
+              target="_blank"
+              href="https://www.linkedin.com/in/gabrielgevert/"
+              rel="noopener noreferrer"
+            >
+              <Linkedin width={22} height={22} />
+              <span>LinkedIn</span>
+            </ContactLink>
+            <ContactLink
+              target="_blank"
+              href="https://github.com/GabrielGevert"
+              rel="noopener noreferrer"
+            >
+              <Github width={22} height={22} />
+              <span>GitHub</span>
+            </ContactLink>
+            <ContactLink
+              target="_blank"
+              href="mailto:gevertlolz@gmail.com"
+              rel="noopener noreferrer"
+            >
+              <Mail width={22} height={22} />
+              <span>gevertlolz@gmail.com</span>
+            </ContactLink>
+          </ContactLinksWrap>
         </FirstContent>
         <SecondContent>
-          <SecondContentTitle>
-            {translations[currentLanguage].secondTitle}
-          </SecondContentTitle>
-          <form onSubmit={sendEmail}>
-            <SecondContentWrapInputs>
-              <SecondContentInput
-                name="from_name"
-                placeholder={isEnglish ? "Name: " : "Nome: "}
-                required
-              />
-              <SecondContentInput
-                name="from_email"
-                placeholder="Email: "
-                required
-              />
-              <SecondContentTextArea
-                name="message"
-                placeholder={isEnglish ? "Message: " : "Mensagem: "}
-                required
-              />
-              <SecondContentButton type="submit">
-                {translations[currentLanguage].buttonText}
-              </SecondContentButton>
-            </SecondContentWrapInputs>
-          </form>
+          <FormPanel>
+            <SecondContentTitle>
+              {translations[currentLanguage].secondTitle}
+            </SecondContentTitle>
+            <form onSubmit={sendEmail}>
+              <SecondContentWrapInputs>
+                <SecondContentInput
+                  name="from_name"
+                  placeholder={isEnglish ? "Name" : "Nome"}
+                  required
+                />
+                <SecondContentInput
+                  name="from_email"
+                  type="email"
+                  placeholder="Email"
+                  required
+                />
+                <SecondContentTextArea
+                  name="message"
+                  placeholder={isEnglish ? "Message" : "Mensagem"}
+                  required
+                />
+                <SecondContentButton type="submit">
+                  {translations[currentLanguage].buttonText}
+                  <Send width={18} height={18} />
+                </SecondContentButton>
+              </SecondContentWrapInputs>
+            </form>
+          </FormPanel>
         </SecondContent>
       </ContactContainer>
       {isModalOpen && (

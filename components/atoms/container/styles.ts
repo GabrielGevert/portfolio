@@ -3,30 +3,28 @@ import styled from "styled-components";
 
 export const SectionWrapper = styled.div`
   width: 100%;
-  max-width: calc(100% - 40rem);
+  box-sizing: border-box;
   margin: 0 auto;
-  padding-left: 20rem;
-  padding-right: 20rem;
+  padding-left: clamp(1rem, calc((100vw - 1120px) / 2), 22rem);
+  padding-right: clamp(1rem, calc((100vw - 1120px) / 2), 22rem);
   position: relative;
-
-  @media ${device.laptop} {
-    max-width: calc(100% - 4rem);
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
+  scroll-margin-top: 5.5rem;
 
   @media ${device.mobileL} {
-    max-width: calc(100% - 1.6rem);
     padding-left: 0.8rem;
     padding-right: 0.8rem;
   }
 
   &.color {
     background-color: var(--tints_background_2);
+    border-top: 1px solid var(--tints_border);
+    border-bottom: 1px solid var(--tints_border);
     margin-top: 2rem;
   }
 
-  &.top {
-    top: 4rem;
+  &.top.color {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 5rem;
   }
 `;

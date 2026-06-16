@@ -2,10 +2,13 @@
 
 import React from "react";
 import {
+  ProjectsCardBadge,
   ProjectsCardButtonRepo,
   ProjectsCardButtonSite,
   ProjectsCardContainer,
   ProjectsCardDescription,
+  ProjectsCardTag,
+  ProjectsCardTagsWrap,
   ProjectsCardTitle,
   ProjectsCardWrapButtons,
   ProjectsHref,
@@ -14,12 +17,15 @@ import Image from "next/image";
 import { useLanguage } from "@/utils/LanguageContext";
 
 interface ProjectsCardProps {
-  img: string; // Caminho da imagem ou URL
-  title: string; // Título do projeto
-  description: string; // Descrição do projeto
-  site: string; // URL do site
-  repo?: string; // URL do repositório (opcional)
-  bgColor?: string; // Cor de fundo opcional
+  img: string;
+  title: string;
+  description: string;
+  site: string;
+  repo?: string;
+  bgColor?: string;
+  tags?: string[];
+  featured?: boolean;
+  badge?: string;
 }
 
 const translations = {
@@ -32,6 +38,7 @@ const translations = {
     repo: "Ver Código",
   },
 };
+
 const ProjectsCard: React.FC<ProjectsCardProps> = ({
   img,
   title,
@@ -39,15 +46,20 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
   site,
   repo,
   bgColor,
+  tags,
+  featured,
+  badge,
 }) => {
-  const { isEnglish, toggleLanguage } = useLanguage();
+  const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
   const basePath = "/portfolio";
 
   return (
-    <ProjectsCardContainer>
+    <ProjectsCardContainer className={featured ? "featured" : ""}>
+      {badge && <ProjectsCardBadge>{badge}</ProjectsCardBadge>}
       <ProjectsHref
         $bgColor={bgColor}
+        $featured={featured}
         href={site}
         target="_blank"
         rel="noopener noreferrer"
@@ -60,6 +72,13 @@ const ProjectsCard: React.FC<ProjectsCardProps> = ({
         />
       </ProjectsHref>
       <ProjectsCardTitle>{title}</ProjectsCardTitle>
+      {tags && tags.length > 0 && (
+        <ProjectsCardTagsWrap>
+          {tags.map((tag, index) => (
+            <ProjectsCardTag key={index}>{tag}</ProjectsCardTag>
+          ))}
+        </ProjectsCardTagsWrap>
+      )}
       <ProjectsCardDescription>{description}</ProjectsCardDescription>
       <ProjectsCardWrapButtons className={repo ? "" : "noRepo"}>
         <ProjectsCardButtonSite

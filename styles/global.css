@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'Satoshi-Light';
-    src: url('/fonts/satoshi/Satoshi-Light.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-Light.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-Light.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-Light.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-Light.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-Light.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
     font-style: normal;
@@ -10,9 +10,9 @@
   
   @font-face {
     font-family: 'Satoshi-LightItalic';
-    src: url('/fonts/satoshi/Satoshi-LightItalic.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-LightItalic.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-LightItalic.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-LightItalic.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-LightItalic.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-LightItalic.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
     font-style: italic;
@@ -30,9 +30,9 @@
   
   @font-face {
     font-family: 'Satoshi-Italic';
-    src: url('/fonts/satoshi/Satoshi-Italic.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-Italic.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-Italic.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-Italic.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-Italic.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-Italic.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
     font-style: italic;
@@ -40,9 +40,9 @@
   
   @font-face {
     font-family: 'Satoshi-Medium';
-    src: url('/fonts/satoshi/Satoshi-Medium.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-Medium.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-Medium.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-Medium.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-Medium.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
     font-style: normal;
@@ -50,9 +50,9 @@
   
   @font-face {
     font-family: 'Satoshi-MediumItalic';
-    src: url('/fonts/satoshi/Satoshi-MediumItalic.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-MediumItalic.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-MediumItalic.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-MediumItalic.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-MediumItalic.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
     font-style: italic;
@@ -70,9 +70,9 @@
   
   @font-face {
     font-family: 'Satoshi-BoldItalic';
-    src: url('/fonts/satoshi/Satoshi-BoldItalic.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-BoldItalic.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-BoldItalic.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-BoldItalic.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-BoldItalic.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-BoldItalic.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
     font-style: italic;
@@ -80,9 +80,9 @@
   
   @font-face {
     font-family: 'Satoshi-Black';
-    src: url('/fonts/satoshi/Satoshi-Black.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-Black.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-Black.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-Black.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-Black.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-Black.ttf') format('truetype');
     font-weight: 900;
     font-display: swap;
     font-style: normal;
@@ -90,9 +90,9 @@
   
   @font-face {
     font-family: 'Satoshi-BlackItalic';
-    src: url('/fonts/satoshi/Satoshi-BlackItalic.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-BlackItalic.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-BlackItalic.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-BlackItalic.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-BlackItalic.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-BlackItalic.ttf') format('truetype');
     font-weight: 900;
     font-display: swap;
     font-style: italic;
@@ -100,9 +100,9 @@
   
   @font-face {
     font-family: 'Satoshi-Variable';
-    src: url('/fonts/satoshi/Satoshi-Variable.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-Variable.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-Variable.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-Variable.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-Variable.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-Variable.ttf') format('truetype');
     font-weight: 300 900;
     font-display: swap;
     font-style: normal;
@@ -110,9 +110,9 @@
   
   @font-face {
     font-family: 'Satoshi-VariableItalic';
-    src: url('/fonts/satoshi/Satoshi-VariableItalic.woff2') format('woff2'),
-         url('/fonts/satoshi/Satoshi-VariableItalic.woff') format('woff'),
-         url('/fonts/satoshi/Satoshi-VariableItalic.ttf') format('truetype');
+    src: url('/portfolio/fonts/satoshi/Satoshi-VariableItalic.woff2') format('woff2'),
+         url('/portfolio/fonts/satoshi/Satoshi-VariableItalic.woff') format('woff'),
+         url('/portfolio/fonts/satoshi/Satoshi-VariableItalic.ttf') format('truetype');
     font-weight: 300 900;
     font-display: swap;
     font-style: italic;
@@ -123,29 +123,74 @@
     --neutrals_light_100: #F5F5F5;
 
     --neutrals_gray: #BDBDBD;
+    --neutrals_gray_dark: #8B8B9E;
 
     --tints_primary: #7562E0;
+    --tints_primary_light: #9D8DF2;
+    --tints_primary_deep: #5847C2;
+    --tints_glow: rgba(117, 98, 224, 0.35);
+    --tints_glow_soft: rgba(117, 98, 224, 0.12);
 
-    --tints_background: #181824;
-    --tints_background_2: #1a1a29;
-    --tints_background_3: #31313F;
+    --tints_background: #0E0E17;
+    --tints_background_2: #14141F;
+    --tints_background_3: #1C1C2B;
 
     --tints_secondary: #282162;
+
+    --tints_border: rgba(157, 141, 242, 0.18);
+    --tints_border_strong: rgba(157, 141, 242, 0.45);
+
+    --tints_star: #F5C002;
+
+    --gradient_primary: linear-gradient(135deg, #9D8DF2 0%, #7562E0 50%, #5847C2 100%);
 
     --fonts_primary: 'Satoshi-Regular';
     --fonts_primary_bold: 'Satoshi-Bold';
     --fonts_primary_light: 'Satoshi-Light';
-  
+
     --font_size_title_mobileL: 1.5rem;
     --font_size_title_mobileM: 1.2rem;
     --font_size_mobileL: 0.9rem;
     --font_size_mobileM: 0.8rem;
   }
-  
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--fonts_primary);
+    color: var(--neutrals_light_100);
     background-color: var(--tints_background);
+    background-image:
+      radial-gradient(ellipse 50% 40% at 80% 0%, rgba(117, 98, 224, 0.14), transparent),
+      radial-gradient(ellipse 45% 35% at 10% 45%, rgba(88, 71, 194, 0.10), transparent),
+      radial-gradient(ellipse 55% 40% at 90% 90%, rgba(117, 98, 224, 0.08), transparent);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background-color: var(--tints_primary);
+    color: var(--neutrals_light);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--tints_background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--tints_background_3);
+    border-radius: 8px;
+    border: 2px solid var(--tints_background);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--tints_primary_deep);
   }
