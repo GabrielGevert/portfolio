@@ -198,6 +198,7 @@ interface CvItem {
 interface CvData {
   role: string;
   location: string;
+  linkedinUrl: string;
   summaryTitle: string;
   summary: string;
   experienceTitle: string;
@@ -264,10 +265,7 @@ export const CvDocument = ({
           </View>
           <View style={styles.contactItem}>
             {icons.linkedin}
-            <Link
-              style={styles.contactLink}
-              src="https://www.linkedin.com/in/gabrielgevert/"
-            >
+            <Link style={styles.contactLink} src={data.linkedinUrl}>
               in/gabrielgevert
             </Link>
           </View>

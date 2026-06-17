@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import type { DocumentProps } from "@react-pdf/renderer";
 import { useLanguage } from "@/utils/LanguageContext";
 import { useTheme } from "@/utils/ThemeContext";
+import { getLinkedinUrl } from "@/utils/links";
 import {
   Download,
   Github,
@@ -137,14 +138,18 @@ const content = {
       },
       {
         label: "Back-end",
-        items: "Node.js, NestJS, Laravel, Python, PHP, SQL, PostgreSQL",
+        items: "Node.js, NestJS, Laravel, Python, PHP, SQL",
+      },
+      {
+        label: "Banco de dados",
+        items: "DynamoDB, PostgreSQL, Redis, Neo4j",
       },
       {
         label: "Cloud & DevOps",
         items: "AWS (Amplify, EC2, S3, RDS, Lambda, ECS, CloudFront, CodePipeline), Google Cloud, Docker",
       },
       { label: "Mobile & Games", items: "Flutter, Unity" },
-      { label: "Outros", items: "Git, TypeORM, Neo4j, Redis, ExtJS, IA (RAG, agentes)" },
+      { label: "Outros", items: "Git, TypeORM, ExtJS, IA (RAG, agentes)" },
     ],
     languages: [
       { name: "Português", level: "Nativo" },
@@ -240,14 +245,18 @@ const content = {
       },
       {
         label: "Back-end",
-        items: "Node.js, NestJS, Laravel, Python, PHP, SQL, PostgreSQL",
+        items: "Node.js, NestJS, Laravel, Python, PHP, SQL",
+      },
+      {
+        label: "Databases",
+        items: "DynamoDB, PostgreSQL, Redis, Neo4j",
       },
       {
         label: "Cloud & DevOps",
         items: "AWS (Amplify, EC2, S3, RDS, Lambda, ECS, CloudFront, CodePipeline), Google Cloud, Docker",
       },
       { label: "Mobile & Games", items: "Flutter, Unity" },
-      { label: "Others", items: "Git, TypeORM, Neo4j, Redis, ExtJS, AI (RAG, agents)" },
+      { label: "Others", items: "Git, TypeORM, ExtJS, AI (RAG, agents)" },
     ],
     languages: [
       { name: "Portuguese", level: "Native" },
@@ -275,7 +284,7 @@ export default function CvPage() {
       ]);
       const blob = await pdf(
         React.createElement(CvDocument, {
-          data,
+          data: { ...data, linkedinUrl: getLinkedinUrl(isEnglish) },
           theme,
         }) as React.ReactElement<DocumentProps>
       ).toBlob();
@@ -348,7 +357,7 @@ export default function CvPage() {
               +55 (41) 99679-0036
             </CvContact>
             <CvContact
-              href="https://www.linkedin.com/in/gabrielgevert/"
+              href={getLinkedinUrl(isEnglish)}
               target="_blank"
               rel="noopener noreferrer"
             >

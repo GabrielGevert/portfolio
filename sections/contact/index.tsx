@@ -20,6 +20,7 @@ import {
   SecondContentWrapInputs,
 } from "./styles";
 import { useLanguage } from "@/utils/LanguageContext";
+import { getLinkedinUrl } from "@/utils/links";
 import { Github, Linkedin, Mail, Send } from "lucide-react";
 
 const translations = {
@@ -90,7 +91,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
           <ContactLinksWrap>
             <ContactLink
               target="_blank"
-              href="https://www.linkedin.com/in/gabrielgevert/"
+              href={getLinkedinUrl(isEnglish)}
               rel="noopener noreferrer"
             >
               <Linkedin width={22} height={22} />

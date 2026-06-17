@@ -1,6 +1,7 @@
 "use client";
 import React, { forwardRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
+import { getLinkedinUrl } from "@/utils/links";
 import { Container } from "@/components";
 import {
   OpeningActions,
@@ -78,7 +79,7 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                href="https://www.linkedin.com/in/gabrielgevert/"
+                href={getLinkedinUrl(isEnglish)}
               >
                 <Linkedin width={52} height={52} />
               </OpeningFirstContentItem>

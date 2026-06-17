@@ -17,6 +17,7 @@ import {
 } from "./styles";
 import { useLanguage } from "@/utils/LanguageContext";
 import { useScroll } from "@/utils/ScrollContext";
+import { getLinkedinUrl } from "@/utils/links";
 
 const translations = {
   en: {
@@ -109,7 +110,7 @@ const HeaderMenu = () => {
                 <NavbarMenuItemIcons>
                   <Href
                     target="_blank"
-                    href="https://www.linkedin.com/in/gabrielgevert/"
+                    href={getLinkedinUrl(isEnglish)}
                     rel="noopener noreferrer"
                   >
                     <Linkedin width={28} height={28} />
