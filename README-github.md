@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A66C2,50:5A4FCF,100:FF9900&height=200&section=header&text=Gabriel%20Gevert&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full%20Stack%20%26%20Cloud%20Developer%20%E2%80%A2%20AWS%20Specialist&descSize=18&descAlignY=58" alt="header banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,27&height=200&section=header&text=Gabriel%20Gevert&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Full%20Stack%20Developer%20%E2%80%A2%20AWS%20Specialist&descSize=18&descAlignY=58" alt="header banner" />
 </p>
 
 <p align="center">
@@ -116,10 +116,6 @@ League of Legends coaching platform with class scheduling and **Asaas** payments
 
 <p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=GabrielGevert&theme=tokyonight&hide_border=true" alt="GitHub streak" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=GabrielGevert&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4&column=7" alt="Trophies" />
 </p>
 
 <p align="center">
