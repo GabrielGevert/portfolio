@@ -1,7 +1,8 @@
 "use client";
 import { Container, StacksCard } from "@/components";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
+import { useReveal } from "@/utils/use-reveal";
 import { StacksCardsWrap, StacksContainer, StacksText, StacksTitle } from "./styles";
 import {
   SiAwsamplify,
@@ -29,6 +30,8 @@ const translation = {
 const Stacks = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
+  const innerRef = useRef<HTMLDivElement>(null);
+  useReveal(innerRef);
 
   const StacksCardMock = [
     {
@@ -85,7 +88,7 @@ const Stacks = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Container ref={ref} className="color">
-      <StacksContainer>
+      <StacksContainer ref={innerRef}>
         <StacksTitle>{translation[currentLanguage].title}</StacksTitle>
         <StacksText>{translation[currentLanguage].text}</StacksText>
         <StacksCardsWrap>

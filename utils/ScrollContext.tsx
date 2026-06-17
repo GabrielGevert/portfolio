@@ -5,6 +5,7 @@ interface ScrollContextType {
   refs: {
     openingRef: RefObject<HTMLDivElement | null>;
     aboutMeRef: RefObject<HTMLDivElement | null>;
+    experienceRef: RefObject<HTMLDivElement | null>;
     stacksRef: RefObject<HTMLDivElement | null>;
     projectsRef: RefObject<HTMLDivElement | null>;
     contactRef: RefObject<HTMLDivElement | null>;
@@ -19,6 +20,7 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const openingRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
+  const experienceRef = useRef<HTMLDivElement | null>(null);
   const stacksRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
@@ -38,7 +40,14 @@ export const ScrollProvider: React.FC<{ children: React.ReactNode }> = ({
   return (
     <ScrollContext.Provider
       value={{
-        refs: { openingRef, aboutMeRef, stacksRef, projectsRef, contactRef },
+        refs: {
+          openingRef,
+          aboutMeRef,
+          experienceRef,
+          stacksRef,
+          projectsRef,
+          contactRef,
+        },
         scrollToSection,
       }}
     >

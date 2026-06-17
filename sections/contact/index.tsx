@@ -1,8 +1,9 @@
 "use client";
 
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { Container, MailModal } from "@/components";
+import { useReveal } from "@/utils/use-reveal";
 import {
   ContactContainer,
   ContactLink,
@@ -49,6 +50,8 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalText, setModalText] = useState("");
+  const innerRef = useRef<HTMLDivElement>(null);
+  useReveal(innerRef);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -76,7 +79,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Container ref={ref} className="color">
-      <ContactContainer>
+      <ContactContainer ref={innerRef}>
         <FirstContent>
           <FirstContentTitle>
             {translations[currentLanguage].title}

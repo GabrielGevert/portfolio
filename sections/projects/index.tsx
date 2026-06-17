@@ -1,7 +1,8 @@
 "use client";
 
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef } from "react";
 import { Container, ProjectsCard } from "@/components";
+import { useReveal } from "@/utils/use-reveal";
 import {
   ProjectsCardsWrap,
   ProjectsContainer,
@@ -13,6 +14,8 @@ import { useLanguage } from "@/utils/LanguageContext";
 const Projects = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
+  const innerRef = useRef<HTMLDivElement>(null);
+  useReveal(innerRef);
 
   const translations = {
     en: {
@@ -66,7 +69,7 @@ const Projects = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Container ref={ref}>
-      <ProjectsContainer>
+      <ProjectsContainer ref={innerRef}>
         <ProjectsTitle>{translations[currentLanguage].title}</ProjectsTitle>
         <ProjectsText>{translations[currentLanguage].text}</ProjectsText>
         <ProjectsCardsWrap>

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { forwardRef } from "react";
+import React, { forwardRef, useRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
+import { useReveal } from "@/utils/use-reveal";
 import { Container, Card } from "@/components";
 import {
   AboutMeCardsWrap,
@@ -17,13 +18,13 @@ import { CloudCog, Rocket, Server, Smartphone } from "lucide-react";
 const translations = {
   en: {
     title: "About me:",
-    text: "Hi, I'm Gabriel Gevert, a Fullstack developer working with software development since 2020. I feel at home across every layer of an application, from the front-end to the back-end, including solutions on AWS. I also build mobile apps with Flutter and games with Unity when a project calls for it. I care about building things well and I like working close to a team. These are my main areas:",
+    text: "Hi, I'm Gabriel Gevert, a Fullstack developer working with software development since 2020. I feel at home across every layer of an application, from the front-end to the back-end, including solutions on AWS. I also build mobile apps with Flutter and games with Unity when a project calls for it. I focus on quality, best practices and close collaboration with the team. These are my main areas:",
     explanation:
       "Years building software end to end, always learning and improving with each project alongside the team.",
   },
   pt: {
     title: "Sobre mim:",
-    text: "Olá, sou Gabriel Gevert, desenvolvedor Fullstack atuando com desenvolvimento de software desde 2020. Me sinto à vontade em todas as camadas de uma aplicação, do front-end ao back-end, incluindo soluções na AWS. Também desenvolvo apps mobile com Flutter e jogos com Unity quando o projeto pede. Gosto de fazer as coisas bem feitas e de trabalhar perto do time. Estas são minhas principais áreas:",
+    text: "Olá, sou Gabriel Gevert, desenvolvedor Fullstack atuando com desenvolvimento de software desde 2020. Me sinto à vontade em todas as camadas de uma aplicação, do front-end ao back-end, incluindo soluções na AWS. Também desenvolvo apps mobile com Flutter e jogos com Unity quando o projeto pede. Tenho foco em qualidade, boas práticas e colaboração próxima com o time. Estas são minhas principais áreas:",
     explanation:
       "Anos construindo software de ponta a ponta, sempre aprendendo e melhorando a cada projeto junto com o time.",
   },
@@ -32,6 +33,8 @@ const translations = {
 const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
   const { isEnglish } = useLanguage();
   const currentLanguage = isEnglish ? "en" : "pt";
+  const innerRef = useRef<HTMLDivElement>(null);
+  useReveal(innerRef);
 
   const cardsMock = [
     {
@@ -54,7 +57,7 @@ const AboutMe = forwardRef<HTMLDivElement>((props, ref) => {
 
   return (
     <Container ref={ref} className="top">
-      <AboutMeContainer>
+      <AboutMeContainer ref={innerRef}>
         <AboutMeTitle>{translations[currentLanguage].title}</AboutMeTitle>
         <AboutMeText>{translations[currentLanguage].text}</AboutMeText>
         <AboutMeWrapTexts>
