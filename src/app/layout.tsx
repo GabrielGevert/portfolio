@@ -1,14 +1,101 @@
 import type { Metadata } from "next";
-import { Header } from "@components";
 import "@/styles/global.css";
 import { LanguageProvider } from "@/utils/LanguageContext";
 import StyledComponentsRegistry from "@/utils/registry";
 import { ScrollProvider } from "@/utils/ScrollContext";
+import { ThemeProvider } from "@/utils/ThemeContext";
+
+const siteOrigin = "https://gabrielgevert.github.io";
+const siteUrl = `${siteOrigin}/portfolio/`;
+const description =
+  "Gabriel Gevert, desenvolvedor Full Stack em Curitiba. Constrói aplicações de ponta a ponta com Next.js, React, Node.js, TypeScript e AWS, e também com Flutter e Unity.";
 
 export const metadata: Metadata = {
-  title: "Gabriel Gevert - Portfolio",
-  description:
-    "Portfolio - Gabriel Gevert. Fullstack & Cloud Developer. AWS Amplify, Next.js, Flutter e Unity.",
+  metadataBase: new URL(siteOrigin),
+  title: {
+    default: "Gabriel Gevert | Desenvolvedor Full Stack",
+    template: "%s | Gabriel Gevert",
+  },
+  description,
+  applicationName: "Portfolio Gabriel Gevert",
+  authors: [{ name: "Gabriel Gevert", url: "https://github.com/gabrielgevert" }],
+  creator: "Gabriel Gevert",
+  keywords: [
+    "Gabriel Gevert",
+    "desenvolvedor full stack",
+    "fullstack developer",
+    "Next.js",
+    "React",
+    "Node.js",
+    "TypeScript",
+    "AWS",
+    "Google Cloud",
+    "Flutter",
+    "Unity",
+    "portfolio",
+    "Curitiba",
+  ],
+  alternates: {
+    canonical: siteUrl,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: "/portfolio/me.png",
+    apple: "/portfolio/me.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: siteUrl,
+    siteName: "Gabriel Gevert",
+    title: "Gabriel Gevert | Desenvolvedor Full Stack",
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gabriel Gevert | Desenvolvedor Full Stack",
+    description,
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Gabriel Gevert",
+  url: siteUrl,
+  image: `${siteUrl}me.png`,
+  jobTitle: "Desenvolvedor Full Stack",
+  worksFor: { "@type": "Organization", name: "SAMPI" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Curitiba",
+    addressRegion: "PR",
+    addressCountry: "BR",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/gabrielgevert/",
+    "https://github.com/gabrielgevert",
+  ],
+  knowsAbout: [
+    "Next.js",
+    "React",
+    "Node.js",
+    "TypeScript",
+    "AWS",
+    "Google Cloud",
+    "Flutter",
+    "Unity",
+    "Inteligência Artificial",
+  ],
 };
 
 export default function RootLayout({
@@ -17,15 +104,53 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <link
+          rel="preload"
+          href="/portfolio/fonts/satoshi/Satoshi-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/portfolio/fonts/satoshi/Satoshi-Medium.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/portfolio/fonts/satoshi/Satoshi-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/portfolio/fonts/satoshi/Satoshi-Light.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </head>
       <body>
         <StyledComponentsRegistry>
-          <LanguageProvider>
-            <ScrollProvider>
-              <Header />
-              <main>{children}</main>
-            </ScrollProvider>
-          </LanguageProvider>
+          <ThemeProvider>
+            <LanguageProvider>
+              <ScrollProvider>{children}</ScrollProvider>
+            </LanguageProvider>
+          </ThemeProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
