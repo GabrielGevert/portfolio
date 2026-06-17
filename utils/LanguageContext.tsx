@@ -1,5 +1,11 @@
 "use client";
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, {
+  createContext,
+  useState,
+  useContext,
+  useEffect,
+  ReactNode,
+} from 'react';
 
 interface LanguageContextProps {
   isEnglish: boolean;
@@ -10,6 +16,10 @@ const LanguageContext = createContext<LanguageContextProps | undefined>(undefine
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [isEnglish, setIsEnglish] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.lang = isEnglish ? "en" : "pt-BR";
+  }, [isEnglish]);
 
   const toggleLanguage = () => setIsEnglish((prev) => !prev);
 
