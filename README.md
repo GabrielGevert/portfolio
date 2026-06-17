@@ -4,7 +4,7 @@ Desenvolvedor Full Stack, de Curitiba-PR. Atuo com desenvolvimento de software d
 
 Me sinto à vontade em qualquer camada de um produto. No dia a dia trabalho com Next.js, React, Node.js e TypeScript, tenho a AWS entre minhas especialidades (incluindo Amplify Gen2) e também atuo com Google Cloud e IA (RAG, busca semântica e orquestração de agentes). Quando o projeto pede, desenvolvo apps mobile com Flutter e jogos com Unity.
 
-Hoje atuo como Desenvolvedor Full Stack na **SAMPI** e na **L8 Group**, sempre com foco em qualidade, boas práticas e colaboração próxima com o time.
+Hoje atuo como Desenvolvedor Full Stack na **SAMPI**, na **Form&Fun Studio** e na **L8 Group**, sempre com foco em qualidade, boas práticas e colaboração próxima com o time.
 
 ## Onde me encontrar
 

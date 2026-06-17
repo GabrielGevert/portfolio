@@ -74,7 +74,11 @@ const personJsonLd = {
   url: siteUrl,
   image: `${siteUrl}me.png`,
   jobTitle: "Desenvolvedor Full Stack",
-  worksFor: { "@type": "Organization", name: "SAMPI" },
+  worksFor: [
+    { "@type": "Organization", name: "SAMPI" },
+    { "@type": "Organization", name: "Form&Fun Studio" },
+    { "@type": "Organization", name: "L8 Group" },
+  ],
   address: {
     "@type": "PostalAddress",
     addressLocality: "Curitiba",
