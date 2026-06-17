@@ -22,6 +22,7 @@ const translations = {
   en: {
     home: "Home",
     aboutMe: "About Me",
+    experience: "Experience",
     projects: "Projects",
     contact: "Contact",
     touch: "Get in touch!",
@@ -29,6 +30,7 @@ const translations = {
   pt: {
     home: "Início",
     aboutMe: "Sobre mim",
+    experience: "Experiência",
     projects: "Projetos",
     contact: "Contato",
     touch: "Entre em contato!",
@@ -76,6 +78,11 @@ const HeaderMenu = () => {
                 >
                   {translations[currentLanguage].aboutMe}
                 </NavbarMenuItem>
+                <NavbarMenuItem
+                  onClick={() => scrollToSection(refs.experienceRef)}
+                >
+                  {translations[currentLanguage].experience}
+                </NavbarMenuItem>
                 <NavbarMenuItem onClick={() => scrollToSection(refs.stacksRef)}>
                   Stacks
                 </NavbarMenuItem>
@@ -88,6 +95,9 @@ const HeaderMenu = () => {
                   onClick={() => scrollToSection(refs.contactRef)}
                 >
                   {translations[currentLanguage].contact}
+                </NavbarMenuItem>
+                <NavbarMenuItem href="/portfolio/cv/" onClick={handleCloseMenu}>
+                  CV
                 </NavbarMenuItem>
               </NavbarMenuItens>
             </NavBarMenuItemsWrap>
