@@ -1,40 +1,32 @@
-# Gabriel Gevert | Portfolio
+# Gabriel Gevert
 
-Personal portfolio of Gabriel Gevert, Fullstack & Cloud Developer specialized in AWS Amplify.
+Desenvolvedor Full Stack, de Curitiba-PR. Atuo com desenvolvimento de software desde 2020, construindo aplicações de ponta a ponta, do front-end ao back-end.
 
-**Live:** [gabrielgevert.github.io/portfolio](https://gabrielgevert.github.io/portfolio/)
+Me sinto à vontade em qualquer camada de um produto. No dia a dia trabalho com Next.js, React, Node.js e TypeScript, tenho a AWS entre minhas especialidades (incluindo Amplify Gen2) e também atuo com Google Cloud e IA (RAG, busca semântica e orquestração de agentes). Quando o projeto pede, desenvolvo apps mobile com Flutter e jogos com Unity.
 
-## Tech
+Hoje atuo como Desenvolvedor Full Stack na **SAMPI** e na **L8 Group**, sempre com foco em qualidade, boas práticas e colaboração próxima com o time.
 
-- [Next.js 15](https://nextjs.org) (App Router, static export)
-- React 19
-- styled-components
-- EmailJS (contact form)
-- Deployed on GitHub Pages via `gh-pages`
+## Onde me encontrar
 
-## Running locally
+- **Portfolio:** [gabrielgevert.github.io/portfolio](https://gabrielgevert.github.io/portfolio/)
+- **LinkedIn:** [in/gabrielgevert](https://www.linkedin.com/in/gabrielgevert/)
+- **GitHub:** [GabrielGevert](https://github.com/GabrielGevert)
+
+## Principais tecnologias
+
+`Next.js` · `React` · `TypeScript` · `Node.js` · `AWS` · `AWS Amplify` · `Google Cloud` · `Laravel` · `Flutter` · `Unity`
+
+---
+
+## Sobre este repositório
+
+Este é o código do meu portfolio, feito com Next.js 15 (App Router, static export), React 19 e styled-components.
+
+Rodando localmente:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
-
-## Deploy
-
-```bash
-npm run deploy
-```
-
-Builds the static export and publishes the `out` directory to GitHub Pages.
-
-## Structure
-
-```
-sections/     Page sections (opening, about me, stacks, projects, contact)
-components/   Atomic design components (atoms, molecules, organisms)
-styles/       Global CSS, design tokens and fonts
-utils/        Language context (PT/EN), scroll context, media queries
-public/       Images and Satoshi font files
-```
+O site abre em [http://localhost:3000](http://localhost:3000). Para publicar a versão estática no GitHub Pages: `npm run deploy`.
