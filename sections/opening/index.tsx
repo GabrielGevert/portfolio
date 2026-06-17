@@ -93,7 +93,7 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
                 <Eye />
               </OpeningFirstContentButtonWrap>
               <OpeningCvButton
-                href={`${basePath}/cv/`}
+                href={`${basePath}/cv`}
                 aria-label={translations[currentLanguage].cv}
               >
                 {translations[currentLanguage].cv}

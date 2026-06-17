@@ -72,7 +72,7 @@ const Header = () => {
         <HeaderItems onClick={() => scrollToSection(refs.contactRef)}>
           {translations[currentLanguage].contact}
         </HeaderItems>
-        <HeaderItems href={`${basePath}/cv/`}>CV</HeaderItems>
+        <HeaderItems href={`${basePath}/cv`}>CV</HeaderItems>
       </HeaderSecondContent>
 
       <HeaderControls>

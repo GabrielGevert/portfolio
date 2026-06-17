@@ -96,7 +96,7 @@ const HeaderMenu = () => {
                 >
                   {translations[currentLanguage].contact}
                 </NavbarMenuItem>
-                <NavbarMenuItem href="/portfolio/cv/" onClick={handleCloseMenu}>
+                <NavbarMenuItem href="/portfolio/cv" onClick={handleCloseMenu}>
                   CV
                 </NavbarMenuItem>
               </NavbarMenuItens>

@@ -133,7 +133,7 @@ const Experience = forwardRef<HTMLDivElement>((props, ref) => {
             </TimelineItem>
           ))}
         </Timeline>
-        <ExperienceCta href="/portfolio/cv/">{content.cv}</ExperienceCta>
+        <ExperienceCta href="/portfolio/cv">{content.cv}</ExperienceCta>
       </ExperienceContainer>
     </Container>
   );
