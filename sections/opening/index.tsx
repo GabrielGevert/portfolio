@@ -3,7 +3,9 @@ import React, { forwardRef } from "react";
 import { useLanguage } from "@/utils/LanguageContext";
 import { Container } from "@/components";
 import {
+  OpeningActions,
   OpeningContainer,
+  OpeningCvButton,
   OpeningFirstContent,
   OpeningFirstContentBadge,
   OpeningFirstContentButton,
@@ -18,7 +20,7 @@ import {
   OpeningSecondContent,
 } from "./styles";
 
-import { Cloud, Eye, Github, Linkedin } from "lucide-react";
+import { Cloud, Eye, FileText, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import { useScroll } from "@/utils/ScrollContext";
 import useWindowSize from "@/utils/window-size";
@@ -29,12 +31,14 @@ const translations = {
     presentation: "Hello, I'm",
     text: "A Fullstack developer who builds complete solutions, from the front-end to the back-end. I'm comfortable across every layer of a product, and AWS is among my specialties.",
     project: "Projects",
+    cv: "View CV",
   },
   pt: {
     badge: "Desenvolvedor Fullstack",
     presentation: "Olá, eu sou",
     text: "Desenvolvedor Fullstack que constrói soluções completas, do front-end ao back-end. Me viro bem em qualquer camada de um produto, e a AWS está entre minhas especialidades.",
     project: "Projetos",
+    cv: "Ver CV",
   },
 };
 
@@ -64,25 +68,38 @@ const Opening = forwardRef<HTMLDivElement>((props, ref) => {
             <OpeningFirstContentItemsWrap>
               <OpeningFirstContentItem
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
                 href="https://github.com/GabrielGevert"
               >
                 <Github width={52} height={52} />
               </OpeningFirstContentItem>
               <OpeningFirstContentItem
                 target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 href="https://www.linkedin.com/in/gabrielgevert/"
               >
                 <Linkedin width={52} height={52} />
               </OpeningFirstContentItem>
             </OpeningFirstContentItemsWrap>
-            <OpeningFirstContentButtonWrap
-              onClick={() => scrollToSection(refs.projectsRef)}
-            >
-              <OpeningFirstContentButton>
-                {translations[currentLanguage].project}
-              </OpeningFirstContentButton>
-              <Eye />
-            </OpeningFirstContentButtonWrap>
+            <OpeningActions>
+              <OpeningFirstContentButtonWrap
+                onClick={() => scrollToSection(refs.projectsRef)}
+              >
+                <OpeningFirstContentButton>
+                  {translations[currentLanguage].project}
+                </OpeningFirstContentButton>
+                <Eye />
+              </OpeningFirstContentButtonWrap>
+              <OpeningCvButton
+                href={`${basePath}/cv/`}
+                aria-label={translations[currentLanguage].cv}
+              >
+                {translations[currentLanguage].cv}
+                <FileText />
+              </OpeningCvButton>
+            </OpeningActions>
           </OpeningFirstContentItems>
         </OpeningFirstContent>
         {width !== undefined && width > 768 && (
