@@ -77,7 +77,7 @@ export const CloseButton = styled.p`
   width: 60%;
   align-self: center;
   background: var(--gradient_primary);
-  color: var(--neutrals_light);
+  color: var(--on_accent);
   font-family: var(--fonts_primary_bold);
   border-radius: 8px;
   transition: all 0.2s ease-in-out;

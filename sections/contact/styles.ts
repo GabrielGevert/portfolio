@@ -34,7 +34,7 @@ export const FirstContent = styled.div`
 export const FirstContentTitle = styled.span`
   font-size: 2rem;
   font-family: var(--fonts_primary_bold);
-  color: var(--neutrals_light);
+  color: var(--tints_primary_light);
   width: fit-content;
 
   @media ${device.tablet} {
@@ -197,7 +197,7 @@ export const SecondContentButton = styled.button`
   width: 100%;
   padding: 1rem;
   background: var(--gradient_primary);
-  color: var(--neutrals_light);
+  color: var(--on_accent);
   font-family: var(--fonts_primary_bold);
   font-size: 1rem;
   border-radius: 10px;

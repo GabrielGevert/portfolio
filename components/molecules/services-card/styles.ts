@@ -37,7 +37,7 @@ export const Icon = styled.div`
   height: 56px;
   border-radius: 14px;
   background: var(--gradient_primary);
-  color: var(--neutrals_light_100);
+  color: var(--on_accent);
   box-shadow: 0 4px 16px var(--tints_glow_soft);
   transition: transform 0.3s ease-in-out;
 

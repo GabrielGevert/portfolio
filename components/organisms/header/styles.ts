@@ -16,17 +16,29 @@ export const HeaderContainer = styled.header`
   padding: 1rem clamp(1rem, calc((100vw - 1120px) / 2), 22rem);
   z-index: 9999;
   color: var(--tints_primary);
-  background-color: rgba(14, 14, 23, 0.75);
+  background-color: var(--header_bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--tints_border);
 
   @media ${device.tablet} {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
     gap: 0.8rem;
     padding: 0.8rem 1rem;
-    text-align: center;
+  }
+`;
+
+export const MobileMenuWrap = styled.div`
+  display: none;
+  align-items: center;
+
+  @media ${device.tablet} {
+    display: flex;
+  }
+`;
+
+export const LogoPrefix = styled.span`
+  @media ${device.tablet} {
+    display: none;
   }
 `;
 
@@ -35,7 +47,7 @@ export const HeaderFirstContent = styled.h1`
   font-family: var(--fonts_primary_bold);
   margin: 0;
   white-space: nowrap;
-  color: var(--neutrals_light);
+  color: var(--tints_primary_light);
 
   @media ${device.laptop} {
     font-size: 1.15rem;
@@ -58,6 +70,10 @@ export const HeaderSecondContent = styled.div`
 
   @media ${device.laptop} {
     gap: 1rem;
+  }
+
+  @media ${device.tablet} {
+    display: none;
   }
 `;
 
@@ -92,6 +108,53 @@ export const HeaderItems = styled.a`
     &::after {
       width: 100%;
     }
+  }
+`;
+
+export const HeaderControls = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+
+  @media ${device.tablet} {
+    margin-left: auto;
+    gap: 0.4rem;
+  }
+`;
+
+export const ThemeToggle = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background-color: var(--tints_background_3);
+  border: 1px solid var(--tints_border_strong);
+  color: var(--tints_primary_light);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+  > svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    border-color: var(--tints_primary_light);
+    box-shadow: 0 0 12px var(--tints_glow_soft);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--tints_primary_light);
+    outline-offset: 2px;
+  }
+
+  @media ${device.tablet} {
+    width: 34px;
+    height: 34px;
   }
 `;
 

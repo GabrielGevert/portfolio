@@ -74,7 +74,7 @@ export const OpeningFirstContentTitle = styled.h2`
   font-family: var(--fonts_primary_bold);
   line-height: 1.1;
   margin: 0 0 1rem 0;
-  color: var(--neutrals_light);
+  color: var(--tints_primary_light);
 `;
 
 export const OpeningFirstContentText = styled.p`
@@ -132,7 +132,7 @@ export const OpeningFirstContentItem = styled.a`
 
   &:hover {
     background-color: var(--tints_primary);
-    color: var(--neutrals_light_100);
+    color: var(--on_accent);
     border: 2px solid var(--tints_primary_light);
     box-shadow: 0 0 24px var(--tints_glow);
     cursor: pointer;
@@ -147,6 +147,49 @@ export const OpeningFirstContentItem = styled.a`
       width: 36px;
       height: 36px;
     }
+  }
+`;
+
+export const OpeningActions = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  @media ${device.tablet} {
+    justify-content: center;
+  }
+`;
+
+export const OpeningCvButton = styled.a`
+  padding: 1.1rem 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.2rem;
+  color: var(--neutrals_light_100);
+  border: 1px solid var(--tints_border_strong);
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  > svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    background-color: var(--tints_primary);
+    color: var(--on_accent);
+    border-color: var(--tints_primary_light);
+    box-shadow: 0 0 28px var(--tints_glow);
+    cursor: pointer;
+    transform: translateY(-3px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--tints_primary_light);
+    outline-offset: 3px;
   }
 `;
 
@@ -168,7 +211,7 @@ export const OpeningFirstContentButtonWrap = styled.div`
 
   &:hover {
     background: var(--gradient_primary);
-    color: var(--neutrals_light_100);
+    color: var(--on_accent);
     border: 1px solid var(--tints_primary_light);
     box-shadow: 0 0 28px var(--tints_glow);
     cursor: pointer;
@@ -176,7 +219,7 @@ export const OpeningFirstContentButtonWrap = styled.div`
 
     > a,
     svg {
-      color: var(--neutrals_light_100);
+      color: var(--on_accent);
     }
   }
 `;

@@ -59,7 +59,7 @@ export const ProjectsCardBadge = styled.span`
   padding: 0.25rem 1rem;
   font-size: 0.8rem;
   font-family: var(--fonts_primary_bold);
-  color: var(--neutrals_light);
+  color: var(--on_accent);
   background: var(--gradient_primary);
   border-radius: 1rem;
   white-space: nowrap;
@@ -115,7 +115,7 @@ export const ProjectsCardButtonSite = styled.a`
   width: 37%;
   padding: 1rem;
   background: var(--gradient_primary);
-  color: var(--neutrals_light);
+  color: var(--on_accent);
   border-radius: 8px;
   text-align: center;
   text-decoration: none;

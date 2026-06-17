@@ -18,7 +18,7 @@ export const StacksContainer = styled.div`
 export const StacksTitle = styled.span`
   font-size: 2rem;
   font-family: var(--fonts_primary_bold);
-  color: var(--neutrals_light);
+  color: var(--tints_primary_light);
   width: fit-content;
 `;
 

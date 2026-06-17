@@ -144,6 +144,9 @@
 
     --gradient_primary: linear-gradient(135deg, #9D8DF2 0%, #7562E0 50%, #5847C2 100%);
 
+    --on_accent: #FFFFFF;
+    --header_bg: rgba(14, 14, 23, 0.75);
+
     --fonts_primary: 'Satoshi-Regular';
     --fonts_primary_bold: 'Satoshi-Bold';
     --fonts_primary_light: 'Satoshi-Light';
@@ -152,6 +155,37 @@
     --font_size_title_mobileM: 1.2rem;
     --font_size_mobileL: 0.9rem;
     --font_size_mobileM: 0.8rem;
+  }
+
+  :root[data-theme="light"] {
+    --neutrals_light: #16161F;
+    --neutrals_light_100: #1F1F2B;
+    --neutrals_gray: #565666;
+    --neutrals_gray_dark: #7A7A8C;
+
+    --tints_primary: #6A57D6;
+    --tints_primary_light: #5A47C4;
+    --tints_primary_deep: #4632A0;
+
+    --tints_glow: rgba(117, 98, 224, 0.22);
+    --tints_glow_soft: rgba(117, 98, 224, 0.10);
+
+    --tints_background: #F5F4FB;
+    --tints_background_2: #FFFFFF;
+    --tints_background_3: #FFFFFF;
+
+    --tints_secondary: #C9C2F0;
+
+    --tints_border: rgba(88, 71, 194, 0.20);
+    --tints_border_strong: rgba(88, 71, 194, 0.40);
+
+    --header_bg: rgba(255, 255, 255, 0.8);
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
 
   html {
@@ -174,7 +208,7 @@
 
   ::selection {
     background-color: var(--tints_primary);
-    color: var(--neutrals_light);
+    color: var(--on_accent);
   }
 
   ::-webkit-scrollbar {
@@ -193,4 +227,40 @@
 
   ::-webkit-scrollbar-thumb:hover {
     background: var(--tints_primary_deep);
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--tints_primary_light);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media print {
+    body {
+      background: #ffffff !important;
+      background-image: none !important;
+      color: #10101a;
+    }
+
+    @page {
+      margin: 14mm;
+    }
   }

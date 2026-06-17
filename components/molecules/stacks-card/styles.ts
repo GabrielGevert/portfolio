@@ -50,7 +50,7 @@ export const Badge = styled.span`
   padding: 0.2rem 0.9rem;
   font-size: 0.8rem;
   font-family: var(--fonts_primary_bold);
-  color: var(--neutrals_light);
+  color: var(--on_accent);
   background: var(--gradient_primary);
   border-radius: 1rem;
   white-space: nowrap;
