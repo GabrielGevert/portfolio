@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://gabrielgevert.github.io/portfolio/sitemap.xml
