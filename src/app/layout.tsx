@@ -59,11 +59,20 @@ export const metadata: Metadata = {
     siteName: "Gabriel Gevert",
     title: "Gabriel Gevert | Desenvolvedor Full Stack",
     description,
+    images: [
+      {
+        url: "/portfolio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Gabriel Gevert - Desenvolvedor Full Stack",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Gabriel Gevert | Desenvolvedor Full Stack",
     description,
+    images: ["/portfolio/og-image.png"],
   },
 };
 
