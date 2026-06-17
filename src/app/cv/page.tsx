@@ -276,6 +276,7 @@ export default function CvPage() {
       const blob = await pdf(
         React.createElement(CvDocument, {
           data,
+          theme,
         }) as React.ReactElement<DocumentProps>
       ).toBlob();
       const url = URL.createObjectURL(blob);
