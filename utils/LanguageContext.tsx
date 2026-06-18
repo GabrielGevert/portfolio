@@ -14,14 +14,31 @@ interface LanguageContextProps {
 
 const LanguageContext = createContext<LanguageContextProps | undefined>(undefined);
 
+const syncLangParam = (isEnglish: boolean) => {
+  if (typeof window === "undefined") return;
+  const url = new URL(window.location.href);
+  url.searchParams.set("lang", isEnglish ? "en" : "pt");
+  window.history.replaceState(null, "", url.toString());
+};
+
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [isEnglish, setIsEnglish] = useState(false);
+
+  useEffect(() => {
+    const lang = new URLSearchParams(window.location.search).get("lang");
+    if (lang === "en") setIsEnglish(true);
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = isEnglish ? "en" : "pt-BR";
   }, [isEnglish]);
 
-  const toggleLanguage = () => setIsEnglish((prev) => !prev);
+  const toggleLanguage = () =>
+    setIsEnglish((prev) => {
+      const next = !prev;
+      syncLangParam(next);
+      return next;
+    });
 
   return (
     <LanguageContext.Provider value={{ isEnglish, toggleLanguage }}>
