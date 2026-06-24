@@ -6,8 +6,11 @@ import { useReveal } from "@/utils/use-reveal";
 import { StacksCardsWrap, StacksContainer, StacksText, StacksTitle } from "./styles";
 import {
   SiAwsamplify,
+  SiDocker,
   SiFlutter,
+  SiNestjs,
   SiNextdotjs,
+  SiPython,
   SiTypescript,
   SiUnity,
 } from "react-icons/si";
@@ -70,9 +73,24 @@ const Stacks = forwardRef<HTMLDivElement>((props, ref) => {
       description: "Back-End",
     },
     {
+      title: "NestJS",
+      icon: <SiNestjs />,
+      description: "Back-End",
+    },
+    {
       title: "Laravel",
       icon: <FaLaravel />,
       description: "Back-End",
+    },
+    {
+      title: "Python",
+      icon: <SiPython />,
+      description: isEnglish ? "AI · Back-End" : "IA · Back-End",
+    },
+    {
+      title: "Docker",
+      icon: <SiDocker />,
+      description: "DevOps",
     },
     {
       title: "Flutter",
