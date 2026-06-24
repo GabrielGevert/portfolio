@@ -193,6 +193,7 @@ interface CvItem {
   company: string;
   period: string;
   bullets: string[];
+  link?: string;
 }
 
 interface CvData {
@@ -203,6 +204,10 @@ interface CvData {
   summary: string;
   experienceTitle: string;
   experience: CvItem[];
+  projectsTitle: string;
+  projects: CvItem[];
+  achievementsTitle: string;
+  achievements: CvItem[];
   educationTitle: string;
   education: CvItem[];
   skillsTitle: string;
@@ -225,7 +230,13 @@ export const CvDocument = ({
   const renderItem = (item: CvItem) => (
     <View style={styles.item} wrap={false} key={`${item.company}-${item.period}`}>
       <View style={styles.itemHead}>
-        <Text style={styles.itemRole}>{item.role}</Text>
+        {item.link ? (
+          <Link style={styles.itemRole} src={item.link}>
+            {item.role}
+          </Link>
+        ) : (
+          <Text style={styles.itemRole}>{item.role}</Text>
+        )}
         <Text style={styles.itemPeriod}>{item.period}</Text>
       </View>
       <Text style={styles.itemCompany}>{item.company}</Text>
@@ -297,6 +308,16 @@ export const CvDocument = ({
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>{data.experienceTitle}</Text>
           {data.experience.map(renderItem)}
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>{data.projectsTitle}</Text>
+          {data.projects.map(renderItem)}
+        </View>
+
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>{data.achievementsTitle}</Text>
+          {data.achievements.map(renderItem)}
         </View>
 
         <View style={styles.section}>

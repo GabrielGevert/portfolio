@@ -26,16 +26,19 @@ import {
   CvContact,
   CvContacts,
   CvHead,
+  CvLocation,
   CvName,
   CvRole,
   CvScreen,
   ExpBullet,
   ExpBullets,
   ExpCompany,
+  ExpCompanyLink,
   ExpHead,
   ExpItem,
   ExpPeriod,
   ExpRole,
+  ExpRoleLink,
   Paper,
   Section,
   SectionTitle,
@@ -58,8 +61,10 @@ const content = {
     pageLabel: "Currículo",
     summaryTitle: "Resumo",
     summary:
-      "Desenvolvedor Full Stack atuando com desenvolvimento de software desde 2020, construindo aplicações de ponta a ponta, do front-end ao back-end. Experiência sólida com React, Next.js, Node.js, TypeScript e todo o ecossistema AWS, além de IA, mobile (Flutter) e games (Unity). Foco em qualidade, boas práticas e colaboração próxima com o time.",
+      "Desenvolvedor Full Stack atuando com desenvolvimento de software desde 2020, construindo aplicações de ponta a ponta, do front-end ao back-end. Mantenho produtos próprios em produção, como o Inefavel Academy (1.000+ vendas), e já contribuí em projetos para marcas globais como Coca-Cola. Experiência sólida com React, Next.js, Node.js, TypeScript e todo o ecossistema AWS, além de IA, mobile (Flutter) e games (Unity). Foco em qualidade, boas práticas e colaboração próxima com o time.",
     experienceTitle: "Experiência profissional",
+    projectsTitle: "Projetos",
+    achievementsTitle: "Conquistas",
     educationTitle: "Formação",
     skillsTitle: "Habilidades",
     languagesTitle: "Idiomas",
@@ -117,6 +122,37 @@ const content = {
         ],
       },
     ],
+    projects: [
+      {
+        role: "Inefavel Academy",
+        company: "Produto próprio · inefavelacademy.com",
+        link: "https://www.inefavelacademy.com",
+        period: "Produção",
+        bullets: [
+          "Plataforma de cursos e coaching com mais de 1.000 vendas, construída de ponta a ponta em arquitetura serverless na AWS (Amplify Gen 2, 70+ funções Lambda, AppSync, DynamoDB, Cognito).",
+          "Dois gateways de pagamento (Stripe e Asaas) com PIX, cartão e parcelamento, idempotência completa e webhooks com assinatura verificada.",
+          "Segurança aprovada em pentest profissional: JWT RS256, rate limiting, preço calculado no servidor e autorização em nível de campo. SEO dinâmico e dashboards de analytics.",
+        ],
+      },
+      {
+        role: "Coach Guaxi",
+        company: "Produto próprio · guaxilolcoach.com",
+        link: "https://www.guaxilolcoach.com",
+        period: "Produção",
+        bullets: [
+          "Plataforma de coaching de League of Legends com agendamento de aulas e pagamentos via Asaas (PIX e parcelamento com idempotência).",
+          "Roleta de Campeões em canvas com mais de 170 campeões carregados da API da Riot, com mecânicas de win streak e revive.",
+        ],
+      },
+    ],
+    achievements: [
+      {
+        role: "Ouro no Cannes Lions (Social & Creator Lions)",
+        company: "Chicken Screams for Coke (Coca-Cola), com contribuição ativa no desenvolvimento",
+        period: "2026",
+        bullets: [],
+      },
+    ],
     education: [
       {
         role: "Sistemas de Informação",
@@ -165,8 +201,10 @@ const content = {
     pageLabel: "CV",
     summaryTitle: "Summary",
     summary:
-      "Full Stack Developer working with software development since 2020, building applications end to end, from front-end to back-end. Solid experience with React, Next.js, Node.js, TypeScript and the full AWS ecosystem, plus AI, mobile (Flutter) and games (Unity). Focused on quality, best practices and close collaboration with the team.",
+      "Full Stack Developer working with software development since 2020, building applications end to end, from front-end to back-end. I run my own products in production, like Inefavel Academy (1,000+ sales), and I've contributed to projects for global brands like Coca-Cola. Solid experience with React, Next.js, Node.js, TypeScript and the full AWS ecosystem, plus AI, mobile (Flutter) and games (Unity). Focused on quality, best practices and close collaboration with the team.",
     experienceTitle: "Professional experience",
+    projectsTitle: "Projects",
+    achievementsTitle: "Achievements",
     educationTitle: "Education",
     skillsTitle: "Skills",
     languagesTitle: "Languages",
@@ -222,6 +260,37 @@ const content = {
           "Bug fixing and implementation of new features in modular CRM systems.",
           "Worked with ExtJS, Python and SQL.",
         ],
+      },
+    ],
+    projects: [
+      {
+        role: "Inefavel Academy",
+        company: "Own product · inefavelacademy.com",
+        link: "https://www.inefavelacademy.com",
+        period: "Production",
+        bullets: [
+          "Courses and coaching platform with 1,000+ sales, built end to end on a serverless AWS architecture (Amplify Gen 2, 70+ Lambda functions, AppSync, DynamoDB, Cognito).",
+          "Two payment gateways (Stripe and Asaas) with PIX, card and installments, full idempotency and signature-verified webhooks.",
+          "Security approved in a professional pentest: RS256 JWT, rate limiting, server-side pricing and field-level authorization. Dynamic SEO and analytics dashboards.",
+        ],
+      },
+      {
+        role: "Coach Guaxi",
+        company: "Own product · guaxilolcoach.com",
+        link: "https://www.guaxilolcoach.com",
+        period: "Production",
+        bullets: [
+          "League of Legends coaching platform with class scheduling and Asaas payments (PIX and installments with idempotency).",
+          "Champions Roulette built on canvas, loading 170+ champions from Riot's API, with win streak and revive mechanics.",
+        ],
+      },
+    ],
+    achievements: [
+      {
+        role: "Gold at Cannes Lions (Social & Creator Lions)",
+        company: "Chicken Screams for Coke (Coca-Cola), with active contribution to development",
+        period: "2026",
+        bullets: [],
       },
     ],
     education: [
@@ -343,11 +412,11 @@ export default function CvPage() {
         <CvHead>
           <CvName>Gabriel Gevert</CvName>
           <CvRole>{data.role}</CvRole>
+          <CvLocation>
+            <MapPin />
+            {data.location}
+          </CvLocation>
           <CvContacts>
-            <CvContact as="span">
-              <MapPin />
-              {data.location}
-            </CvContact>
             <CvContact href="mailto:gevertlolz@gmail.com">
               <Mail />
               gevertlolz@gmail.com
@@ -402,6 +471,56 @@ export default function CvPage() {
                   <ExpBullet key={index}>{bullet}</ExpBullet>
                 ))}
               </ExpBullets>
+            </ExpItem>
+          ))}
+        </Section>
+
+        <Section>
+          <SectionTitle>{data.projectsTitle}</SectionTitle>
+          {data.projects.map((item) => (
+            <ExpItem key={`${item.company}-${item.role}`}>
+              <ExpHead>
+                <ExpRoleLink
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.role}
+                </ExpRoleLink>
+                {item.period && <ExpPeriod>{item.period}</ExpPeriod>}
+              </ExpHead>
+              <ExpCompanyLink
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.company}
+              </ExpCompanyLink>
+              <ExpBullets>
+                {item.bullets.map((bullet, index) => (
+                  <ExpBullet key={index}>{bullet}</ExpBullet>
+                ))}
+              </ExpBullets>
+            </ExpItem>
+          ))}
+        </Section>
+
+        <Section>
+          <SectionTitle>{data.achievementsTitle}</SectionTitle>
+          {data.achievements.map((item) => (
+            <ExpItem key={`${item.role}`}>
+              <ExpHead>
+                <ExpRole>{item.role}</ExpRole>
+                {item.period && <ExpPeriod>{item.period}</ExpPeriod>}
+              </ExpHead>
+              <ExpCompany>{item.company}</ExpCompany>
+              {item.bullets.length > 0 && (
+                <ExpBullets>
+                  {item.bullets.map((bullet, index) => (
+                    <ExpBullet key={index}>{bullet}</ExpBullet>
+                  ))}
+                </ExpBullets>
+              )}
             </ExpItem>
           ))}
         </Section>

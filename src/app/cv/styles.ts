@@ -199,6 +199,21 @@ export const CvRole = styled.p`
   font-family: var(--fonts_primary_bold);
 `;
 
+export const CvLocation = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--neutrals_gray);
+  margin-bottom: 0.6rem;
+
+  > svg {
+    width: 15px;
+    height: 15px;
+    color: var(--tints_primary_light);
+  }
+`;
+
 export const CvContacts = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -280,6 +295,19 @@ export const ExpRole = styled.h3`
   font-family: var(--fonts_primary_bold);
 `;
 
+export const ExpRoleLink = styled.a`
+  font-size: 1.05rem;
+  margin: 0;
+  color: var(--neutrals_light);
+  font-family: var(--fonts_primary_bold);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--tints_primary_light);
+    text-decoration: underline;
+  }
+`;
+
 export const ExpPeriod = styled.span`
   font-size: 0.85rem;
   color: var(--neutrals_gray);
@@ -290,6 +318,18 @@ export const ExpCompany = styled.p`
   font-size: 0.95rem;
   color: var(--tints_primary_light);
   margin: 0.1rem 0 0.55rem;
+`;
+
+export const ExpCompanyLink = styled.a`
+  display: inline-block;
+  font-size: 0.95rem;
+  color: var(--tints_primary_light);
+  margin: 0.1rem 0 0.55rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const ExpBullets = styled.ul`
