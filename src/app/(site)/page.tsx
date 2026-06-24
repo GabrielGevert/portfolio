@@ -3,6 +3,7 @@
 import React from "react";
 import { useScroll } from "@/utils/ScrollContext";
 import AboutMe from "@/sections/about-me";
+import Achievements from "@/sections/achievements";
 import Contact from "@/sections/contact";
 import Experience from "@/sections/experience";
 import Opening from "@/sections/opening";
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutMe ref={refs.aboutMeRef} />
       <Experience ref={refs.experienceRef} />
       <Stacks ref={refs.stacksRef} />
+      <Achievements ref={refs.achievementsRef} />
       <Projects ref={refs.projectsRef} />
       <Contact ref={refs.contactRef} />
     </>

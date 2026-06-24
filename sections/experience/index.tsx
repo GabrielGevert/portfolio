@@ -44,8 +44,8 @@ const translation = {
         period: "Feb 2025 - Present",
         current: true,
         description:
-          "Creative tech studio that combines design, technology and storytelling to deliver immersive experiences across web, AR/VR, games and web3. I lead the development and maintenance of full stack applications (React, Node.js, Python, TypeScript, AWS Amplify) and build interactive games and experiences (WebGL, game engines, real-time), working across the full AWS stack (EC2, S3, RDS, Lambda, ECS, CloudFront, CodePipeline). I have delivered projects for global clients such as Coca-Cola and McKinsey, among other world-renowned brands.",
-        tags: ["React", "Node.js", "AWS", "WebGL", "AR/VR", "Python"],
+          "Creative tech studio that combines design, technology and storytelling to deliver immersive experiences across web, AR/VR, games and web3. I lead the development and maintenance of full stack applications (React, Node.js, Python, TypeScript, AWS Amplify) and build interactive games and experiences (WebGL, game engines, real-time), working across the full AWS stack (EC2, S3, RDS, Lambda, ECS, CloudFront, CodePipeline). I have delivered projects for global clients such as Coca-Cola and McKinsey, among other world-renowned brands, including Chicken Screams for Coke (Coca-Cola), awarded Gold at Cannes Lions 2026 (Social & Creator Lions).",
+        tags: ["React", "Node.js", "AWS", "WebGL", "AR/VR", "Cannes Lions 🏆"],
       },
       {
         role: "Full Stack Developer",
@@ -79,8 +79,8 @@ const translation = {
         period: "Fev 2025 - Atual",
         current: true,
         description:
-          "Estúdio de tecnologia criativa que combina design, tecnologia e narrativa para entregar experiências imersivas em web, AR/VR, games e web3. À frente do desenvolvimento e manutenção de aplicações full stack (React, Node.js, Python, TypeScript, AWS Amplify) e da concepção de jogos e experiências interativas (WebGL, engines de games, real-time), atuando em todo o fluxo AWS (EC2, S3, RDS, Lambda, ECS, CloudFront, CodePipeline). Já entreguei projetos para clientes globais como Coca-Cola e McKinsey, entre outras marcas de relevância mundial.",
-        tags: ["React", "Node.js", "AWS", "WebGL", "AR/VR", "Python"],
+          "Estúdio de tecnologia criativa que combina design, tecnologia e narrativa para entregar experiências imersivas em web, AR/VR, games e web3. À frente do desenvolvimento e manutenção de aplicações full stack (React, Node.js, Python, TypeScript, AWS Amplify) e da concepção de jogos e experiências interativas (WebGL, engines de games, real-time), atuando em todo o fluxo AWS (EC2, S3, RDS, Lambda, ECS, CloudFront, CodePipeline). Já entreguei projetos para clientes globais como Coca-Cola e McKinsey, entre outras marcas de relevância mundial, incluindo o Chicken Screams for Coke (Coca-Cola), premiado com Ouro no Cannes Lions 2026 (Social & Creator Lions).",
+        tags: ["React", "Node.js", "AWS", "WebGL", "AR/VR", "Cannes Lions 🏆"],
       },
       {
         role: "Desenvolvedor Full Stack",

@@ -24,6 +24,7 @@ const translations = {
     home: "Home",
     aboutMe: "About Me",
     experience: "Experience",
+    achievements: "Achievements",
     projects: "Projects",
     contact: "Contact",
     touch: "Get in touch!",
@@ -32,6 +33,7 @@ const translations = {
     home: "Início",
     aboutMe: "Sobre mim",
     experience: "Experiência",
+    achievements: "Conquistas",
     projects: "Projetos",
     contact: "Contato",
     touch: "Entre em contato!",
@@ -86,6 +88,11 @@ const HeaderMenu = () => {
                 </NavbarMenuItem>
                 <NavbarMenuItem onClick={() => scrollToSection(refs.stacksRef)}>
                   Stacks
+                </NavbarMenuItem>
+                <NavbarMenuItem
+                  onClick={() => scrollToSection(refs.achievementsRef)}
+                >
+                  {translations[currentLanguage].achievements}
                 </NavbarMenuItem>
                 <NavbarMenuItem
                   onClick={() => scrollToSection(refs.projectsRef)}
