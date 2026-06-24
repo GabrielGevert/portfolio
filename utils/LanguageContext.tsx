@@ -33,12 +33,11 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.lang = isEnglish ? "en" : "pt-BR";
   }, [isEnglish]);
 
-  const toggleLanguage = () =>
-    setIsEnglish((prev) => {
-      const next = !prev;
-      syncLangParam(next);
-      return next;
-    });
+  const toggleLanguage = () => {
+    const next = !isEnglish;
+    setIsEnglish(next);
+    syncLangParam(next);
+  };
 
   return (
     <LanguageContext.Provider value={{ isEnglish, toggleLanguage }}>
