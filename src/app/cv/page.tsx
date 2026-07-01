@@ -303,7 +303,7 @@ const content = {
       {
         role: "English",
         company: "Talken English School",
-        period: "Intermediate",
+        period: "B2+",
         bullets: [],
       },
     ],
@@ -329,7 +329,7 @@ const content = {
     ],
     languages: [
       { name: "Portuguese", level: "Native" },
-      { name: "English", level: "Intermediate" },
+      { name: "English", level: "B2+" },
     ],
   },
 };
